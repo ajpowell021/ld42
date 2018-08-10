@@ -8,6 +8,7 @@ public class StateManager : MonoBehaviour {
 
 	public PlayerDirection currentPlayerDirection;
 	public PlayerPostion currentPlayerPosition;
+	public Item currentItemHeld;
 
 	// Functions
 

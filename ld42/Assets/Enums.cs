@@ -13,6 +13,11 @@ public enum PlayerDirection {
     DOWN
 }
 
+public enum Item {
+    DOG,
+    BUN
+}
+
 public enum AppType {
     FLAME,
     BUN,
