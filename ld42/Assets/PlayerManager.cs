@@ -95,7 +95,21 @@ public class PlayerManager : MonoBehaviour {
 				itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, counterItem);
 				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.NONE);
-				stateManager.setItemInHat(counterItem);
+				break;
+			case Item.COOKED_DOG:
+				// Picks up cooked hotdog.
+				itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+				counterManager.setItemHeldOnCounter(CounterPosition.HAT, counterItem);
+				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.NONE);
+				break;
+			case Item.MICROWAVE_COOKING:
+				Debug.Log("Not done cooking");
+				break;
+			case Item.MICROWAVE_DONE:
+				// Get cooked hotdog from microwave.
+				itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.COOKED_DOG);
+				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.MICROWAVE_OFF);
 				break;
 			case Item.NONE:
 				Debug.Log("No item held, no item on counter");
@@ -112,9 +126,18 @@ public class PlayerManager : MonoBehaviour {
 		switch (counterItem) {
 
 			case Item.NONE:
-				itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
 				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, stateManager.currentHatItem);
-				stateManager.setItemInHat(Item.NONE);
+				itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+				break;
+			case Item.MICROWAVE_OFF:
+				// Using a uncooked hotdog on a off microwave.
+				if (stateManager.currentHatItem == Item.DOG) {
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.MICROWAVE_COOKING);
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+				}
 				break;
 			default:
 				Debug.Log("Wrong item set down");

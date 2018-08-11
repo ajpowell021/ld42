@@ -15,8 +15,12 @@ public enum PlayerDirection {
 
 public enum Item {
     DOG,
+    COOKED_DOG,
     BUN,
-    NONE
+    NONE,
+    MICROWAVE_OFF,
+    MICROWAVE_COOKING,
+    MICROWAVE_DONE
 }
 
 public enum AppType {

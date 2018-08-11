@@ -12,6 +12,8 @@ public class StateManager : MonoBehaviour {
 	public CounterPosition chefCounterPosition;
 	public Item currentHatItem = Item.NONE;
 
+	public float microwaveTime;
+
 	// Functions
 
 	public void setPlayerPosition(PlayerPostion newPos) {

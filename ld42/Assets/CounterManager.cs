@@ -5,6 +5,16 @@ using UnityEngine;
 
 public class CounterManager : MonoBehaviour {
 
+	// Classes
+
+	private StateManager stateManager;
+
+	// Init
+
+	private void Awake() {
+		stateManager = gameObject.GetComponent<StateManager>();
+	}
+
 	// Functions
 
 	public List<GameObject> getAllCounters() {
@@ -32,6 +42,10 @@ public class CounterManager : MonoBehaviour {
 			if (controller.myCounterPosition == counterPosition) {
 				i = counters.Count;
 			}
+		}
+
+		if (counterPosition == CounterPosition.HAT) {
+			stateManager.setItemInHat(item);
 		}
 
 		controller.setCurrentItemHeld(item);

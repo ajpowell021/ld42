@@ -9,15 +9,21 @@ public class CounterContoller : MonoBehaviour {
 	public Item currentItemHeld;
 
 	public GameObject hotdog;
+	public GameObject offMicro;
+	public GameObject onMicro;
+	public GameObject doneMicro;
+	public GameObject cookedHotdog;
 
 	// Classes
 
 	private ItemManager itemManager;
+	private StateManager stateManager;
 
 	// Init
 
 	private void Awake() {
 		itemManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<ItemManager>();
+		stateManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<StateManager>();
 	}
 
 	// Public Functions
@@ -35,6 +41,19 @@ public class CounterContoller : MonoBehaviour {
 
 			case Item.DOG:
 				newItem = Instantiate(hotdog, transform.position, Quaternion.identity);
+				break;
+			case Item.MICROWAVE_OFF:
+				newItem = Instantiate(offMicro, transform.position, Quaternion.Euler(0, 180, 0));
+				break;
+			case Item.MICROWAVE_COOKING:
+				newItem = Instantiate(onMicro, transform.position, Quaternion.Euler(0, 180, 0));
+				StartCoroutine(startMicrowaveTimer(stateManager.microwaveTime));
+				break;
+			case Item.MICROWAVE_DONE:
+				newItem = Instantiate(doneMicro, transform.position, Quaternion.Euler(0, 180, 0));
+				break;
+			case Item.COOKED_DOG:
+				newItem = Instantiate(cookedHotdog, transform.position, Quaternion.Euler(0, 180, 0));
 				break;
 			case Item.NONE:
 				// Do nothing
@@ -77,5 +96,11 @@ public class CounterContoller : MonoBehaviour {
 				Debug.Log("Wrong counterPosition");
 				break;
 		}
+	}
+
+	private IEnumerator startMicrowaveTimer(float amount) {
+		yield return new WaitForSeconds(amount);
+		itemManager.deleteAllItemsInPosition(myCounterPosition);
+		setCurrentItemHeld(Item.MICROWAVE_DONE);
 	}
 }
