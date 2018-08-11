@@ -111,6 +111,10 @@ public class PlayerManager : MonoBehaviour {
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.COOKED_DOG);
 				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.MICROWAVE_OFF);
 				break;
+			case Item.FRIDGE:
+				// Get hotdog from fridge.
+				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.DOG);
+				break;
 			case Item.NONE:
 				Debug.Log("No item held, no item on counter");
 				break;
@@ -136,6 +140,13 @@ public class PlayerManager : MonoBehaviour {
 					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
 					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.MICROWAVE_COOKING);
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+				}
+				break;
+			case Item.FRIDGE:
+				if (stateManager.currentHatItem == Item.DOG) {
+					// Put uncooked hotdog back in fridge.
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
 				}
 				break;

@@ -20,13 +20,8 @@ public enum Item {
     NONE,
     MICROWAVE_OFF,
     MICROWAVE_COOKING,
-    MICROWAVE_DONE
-}
-
-public enum AppType {
-    FLAME,
-    BUN,
-    KETCHUP
+    MICROWAVE_DONE,
+    FRIDGE
 }
 
 public enum CounterPosition {
