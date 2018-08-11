@@ -116,10 +116,12 @@ public class PlayerManager : MonoBehaviour {
 	public void pickUp() {
 		if (stateManager.currentHatItem == Item.NONE) {
 			Item counterItem = counterManager.getItemOnSpecificCounter(stateManager.chefCounterPosition);
-			playerPickUpAction(counterItem);
+			if (counterItem != Item.MICROWAVE_COOKING && counterItem != Item.MICROWAVE_DONE) {
+				playerPickUpAction(counterItem);
+			}
 		}
 		else {
-			Debug.Log("Already holding somthing.");
+			setDownItemPlayerAction(counterManager.getItemOnSpecificCounter(stateManager.chefCounterPosition));
 		}
 	}
 
@@ -216,6 +218,15 @@ public class PlayerManager : MonoBehaviour {
 			case Item.BUN:
 				if (stateManager.currentHatItem == Item.COOKED_DOG) {
 					// Put cooked dog into bun.
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.HOTDOG_WITH_BUN);
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+				}
+				break;
+			case Item.COOKED_DOG:
+				// put bun on cooked hotdog.
+				if (stateManager.currentHatItem == Item.BUN) {
 					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
 					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.HOTDOG_WITH_BUN);

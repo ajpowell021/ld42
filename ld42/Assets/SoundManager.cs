@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour {
 
 	// Init
 
-	private void Start() {
+	private void Awake() {
 		audioSource = gameObject.GetComponent<AudioSource>();
 	}
 

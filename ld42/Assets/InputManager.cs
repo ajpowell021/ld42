@@ -86,23 +86,38 @@ public class InputManager : MonoBehaviour {
 
     private void checkRecipeTurnIn() {
         if (stateManager.currentHatItem != Item.NONE) {
-            if (Input.GetKeyDown(KeyCode.Alpha1)) {
-                bool success = customerManager.checkIfRecipeMatchesHeldItem(1);
-                if (success) {
-                    stateManager.addMoney(5);
-                    customerManager.removeCustomer(1);
-                    counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
-                    itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
-                    soundManager.playMoneySound();
-                }
-                else {
-                    // No money.
-                    customerManager.removeCustomer(1);
-                    counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
-                    itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
-                    soundManager.playErrorSound();
+            if (!holdingForbiddenItem()) {
+                if (Input.GetKeyDown(KeyCode.Alpha1)) {
+                    bool success = customerManager.checkIfRecipeMatchesHeldItem(1);
+                    if (success) {
+                        stateManager.addMoney(5);
+                        customerManager.removeCustomer(1);
+                        counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+                        itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+                        soundManager.playMoneySound();
+                    }
+                    else {
+                        // No money.
+                        customerManager.removeCustomer(1);
+                        counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+                        itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+                        soundManager.playErrorSound();
+                    }
                 }
             }
+        }
+    }
+
+    private bool holdingForbiddenItem() {
+        // Things that cannot be eaten.
+
+        Item item = stateManager.currentHatItem;
+
+        if (item == Item.BREADBOX || item == Item.DOG || item == Item.BUN || item == Item.MICROWAVE_OFF || item == Item.FRIDGE) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }
