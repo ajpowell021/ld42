@@ -9,6 +9,7 @@ public class CustomerController : MonoBehaviour {
 	public int idNumber;
 	public Item itemWanted;
 	private bool walkAway;
+	private bool walkUp;
 	private float startTime;
 	private Vector3 positionToWalkTo;
 	private Vector3 startingPosition;
@@ -16,15 +17,22 @@ public class CustomerController : MonoBehaviour {
 	// Classes
 
 	private StateManager stateManager;
+	private CustomerManager customerManager;
 
 	// Init
 
 	private void Awake() {
 		stateManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<StateManager>();
+		customerManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<CustomerManager>();
 	}
 
 	private void Start() {
 		createRandomRecipe();
+		startTime = Time.time;
+		startingPosition = transform.position;
+		positionToWalkTo = customerManager.getSpawnLocation(idNumber);
+		positionToWalkTo.z = 2.32f;
+		walkUp = true;
 	}
 
 	// Update
@@ -40,9 +48,28 @@ public class CustomerController : MonoBehaviour {
 				Destroy(gameObject);
 			}
 		}
+
+		if (walkUp) {
+			float distCovered = (Time.time - startTime) * stateManager.customerWalkingSpeed;
+			float fractionJourney = distCovered / Vector3.Distance(startingPosition, positionToWalkTo);
+
+			gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, positionToWalkTo, fractionJourney);
+
+			if (transform.position.z >= 2.3f) {
+				// turn to the left.
+				gameObject.transform.eulerAngles = new Vector3(0, 90, 0);
+				walkUp = false;
+				// make recipe.
+				// show recipe.
+			}
+		}
 	}
 
 	// Functions
+
+	public void setId(int newId) {
+		idNumber = newId;
+	}
 
 	public void createRandomRecipe() {
 		int roll = Random.Range(0, 1);

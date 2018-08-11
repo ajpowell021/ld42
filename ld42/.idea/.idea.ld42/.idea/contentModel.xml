@@ -11,6 +11,7 @@
         <e p="CounterManager.cs" t="Include" />
         <e p="CustomerController.cs" t="Include" />
         <e p="CustomerManager.cs" t="Include" />
+        <e p="CustomerSpawner.cs" t="Include" />
         <e p="Enums.cs" t="Include" />
         <e p="InputManager.cs" t="Include" />
         <e p="ItemManager.cs" t="Include" />

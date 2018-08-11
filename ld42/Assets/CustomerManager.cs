@@ -17,6 +17,37 @@ public class CustomerManager : MonoBehaviour {
 
 	// Functions
 
+	public Vector3 getSpawnLocation(int idNumber) {
+		switch (idNumber) {
+
+			case 1:
+				return new Vector3(2.34f, 0, -5);
+			case 2:
+				return new Vector3(4.38f, 0, -5);
+			case 3:
+				return new Vector3(6.39f, 0, -5);
+		}
+
+		Debug.Log("wrong id number passed");
+		return new Vector3(0, 0, 0);
+	}
+
+	public bool isRoomForCustomer() {
+		return getAllCustomers().Count < 3;
+	}
+
+	public int findFirstOpenSpot() {
+		if (getSpecificCustomer(1) == null) {
+			return 1;
+		}
+		else if (getSpecificCustomer(2) == null) {
+			return 2;
+		}
+		else {
+			return 3;
+		}
+	}
+
 	public List<GameObject> getAllCustomers() {
 		return GameObject.FindGameObjectsWithTag("Customer").ToList();
 	}
@@ -30,8 +61,6 @@ public class CustomerManager : MonoBehaviour {
 				return customers[i];
 			}
 		}
-
-		Debug.Log("No customer matching id");
 		return null;
 	}
 

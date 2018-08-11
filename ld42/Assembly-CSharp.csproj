@@ -59,6 +59,7 @@
     <Compile Include="Assets\CounterManager.cs" />
     <Compile Include="Assets\CustomerController.cs" />
     <Compile Include="Assets\CustomerManager.cs" />
+    <Compile Include="Assets\CustomerSpawner.cs" />
     <Compile Include="Assets\Enums.cs" />
     <Compile Include="Assets\InputManager.cs" />
     <Compile Include="Assets\ItemManager.cs" />

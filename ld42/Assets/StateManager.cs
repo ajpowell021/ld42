@@ -16,6 +16,7 @@ public class StateManager : MonoBehaviour {
 	public CounterPosition chefCounterPosition;
 	public Item currentHatItem = Item.NONE;
 
+	public float newCustomerTime;
 	public float microwaveTime;
 
 	public bool fridgeStored;
