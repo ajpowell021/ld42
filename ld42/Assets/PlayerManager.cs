@@ -28,16 +28,20 @@ public class PlayerManager : MonoBehaviour {
 	// Public Functions
 
 	public void moveUp() {
-		if (stateManager.currentPlayerDirection != PlayerDirection.UP) {
-			stateManager.setPlayerDirection(PlayerDirection.UP);
-			chef.transform.eulerAngles = new Vector3(0, 0, 0);
+		if (stateManager.currentPlayerPosition != PlayerPostion.STORAGE) {
+			if (stateManager.currentPlayerDirection != PlayerDirection.UP) {
+				stateManager.setPlayerDirection(PlayerDirection.UP);
+				chef.transform.eulerAngles = new Vector3(0, 0, 0);
+			}
 		}
 	}
 
 	public void moveDown() {
-		if (stateManager.currentPlayerDirection != PlayerDirection.DOWN) {
-			stateManager.setPlayerDirection(PlayerDirection.DOWN);
-			chef.transform.eulerAngles = new Vector3(0, 180, 0);
+		if (stateManager.currentPlayerPosition != PlayerPostion.STORAGE) {
+			if (stateManager.currentPlayerDirection != PlayerDirection.DOWN) {
+				stateManager.setPlayerDirection(PlayerDirection.DOWN);
+				chef.transform.eulerAngles = new Vector3(0, 180, 0);
+			}
 		}
 	}
 
