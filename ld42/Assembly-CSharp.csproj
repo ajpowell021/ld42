@@ -54,8 +54,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CounterContoller.cs" />
+    <Compile Include="Assets\CounterManager.cs" />
     <Compile Include="Assets\Enums.cs" />
     <Compile Include="Assets\InputManager.cs" />
+    <Compile Include="Assets\ItemManager.cs" />
     <Compile Include="Assets\PlayerManager.cs" />
     <Compile Include="Assets\StateManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">

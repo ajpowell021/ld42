@@ -6,6 +6,14 @@ TagManager:
   tags:
   - Chef
   - Managers
+  - BackLeft
+  - BackCenter
+  - BackRight
+  - FrontLeft
+  - FrontCenter
+  - FrontRight
+  - Hat
+  - CounterController
   layers:
   - Default
   - TransparentFX

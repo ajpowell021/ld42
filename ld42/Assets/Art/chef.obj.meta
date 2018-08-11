@@ -11,7 +11,12 @@ ModelImporter:
     2300000: chef
     3300000: chef
     4300000: chef
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: palette
+    second: {fileID: 2100000, guid: 6299373df5c57a2439209582e24ef34f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
