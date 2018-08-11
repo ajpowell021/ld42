@@ -29,7 +29,9 @@ public enum Item {
     MUSTARD,
     HOTDOG_BUN_W_KETCHUP,
     HOTDOG_BUN_W_MUSTARD,
-    HOTDOG_K_AND_M
+    HOTDOG_K_AND_M,
+    RELISH_JAR,
+    HOTDOG_RELISH
 }
 
 public enum CounterPosition {

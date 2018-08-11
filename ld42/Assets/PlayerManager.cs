@@ -181,6 +181,12 @@ public class PlayerManager : MonoBehaviour {
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, counterItem);
 				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.NONE);
 				break;
+			case Item.HOTDOG_RELISH:
+				// Pick up relish dog.
+				itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+				counterManager.setItemHeldOnCounter(CounterPosition.HAT, counterItem);
+				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.NONE);
+				break;
 			case Item.HOTDOG_K_AND_M:
 				// Picks up Mustard and ketchup bun.
 				itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
@@ -203,6 +209,12 @@ public class PlayerManager : MonoBehaviour {
 			case Item.BREADBOX:
 				// Get bun from breadbox.
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.BUN);
+				break;
+			case Item.RELISH_JAR:
+				// Pickup relish.
+				itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+				counterManager.setItemHeldOnCounter(CounterPosition.HAT, counterItem);
+				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.NONE);
 				break;
 			case Item.NONE:
 				Debug.Log("No item held, no item on counter");
@@ -285,6 +297,12 @@ public class PlayerManager : MonoBehaviour {
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.HOTDOG_K_AND_M);
 				}
 				break;
+			case Item.RELISH_JAR:
+				if (stateManager.currentHatItem == Item.HOTDOG_WITH_BUN) {
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.HOTDOG_RELISH);
+				}
+				break;
 			case Item.HOTDOG_WITH_BUN:
 				// Put mustard on hotdog on counter.
 				if (stateManager.currentHatItem == Item.MUSTARD) {
@@ -295,7 +313,10 @@ public class PlayerManager : MonoBehaviour {
 					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.HOTDOG_BUN_W_KETCHUP);
 				}
-				// Add to bun with mustard.
+				else if (stateManager.currentHatItem == Item.RELISH_JAR) {
+					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.HOTDOG_RELISH);
+				}
 				break;
 			case Item.HOTDOG_BUN_W_KETCHUP:
 				// Add mustard to ketchup dog.
@@ -364,6 +385,11 @@ public class PlayerManager : MonoBehaviour {
 					break;
 				case Item.MUSTARD:
 					storageManager.toggleMustardText();
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					break;
+				case Item.RELISH_JAR:
+					storageManager.toggleRelishText();
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
 					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
 					break;

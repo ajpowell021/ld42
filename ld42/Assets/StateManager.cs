@@ -24,6 +24,7 @@ public class StateManager : MonoBehaviour {
 	public bool microwaveStored;
 	public bool ketchupStored;
 	public bool mustardStored;
+	public bool relishStored;
 
 	public Text moneyText;
 
@@ -52,6 +53,9 @@ public class StateManager : MonoBehaviour {
 			case Item.MUSTARD:
 				mustardStored = set;
 				break;
+			case Item.RELISH_JAR:
+				relishStored = set;
+				break;
 			default:
 				Debug.Log("Can't store item");
 				break;
@@ -72,12 +76,13 @@ public class StateManager : MonoBehaviour {
 				return ketchupStored;
 			case Item.MUSTARD:
 				return mustardStored;
+			case Item.RELISH_JAR:
+				return relishStored;
 			default:
 				Debug.Log("Wrong item type.");
 				return false;
 		}
 	}
-
 
 	public void setPlayerPosition(PlayerPostion newPos) {
 		currentPlayerPosition = newPos;
@@ -88,7 +93,6 @@ public class StateManager : MonoBehaviour {
 		currentPlayerDirection = newDir;
 		setChefCounterPosition();
 	}
-
 
 	public void setItemInHat(Item item) {
 		currentHatItem = item;

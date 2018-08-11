@@ -37,7 +37,10 @@ public class OrderPanelManager : MonoBehaviour {
 				orderText = "Hotdog with mustard";
 				break;
 			case Item.HOTDOG_K_AND_M:
-				orderText = "Hotdog with ketchup and mustard.";
+				orderText = "Hotdog w/ ketchup and mustard";
+				break;
+			case Item.HOTDOG_RELISH:
+				orderText = "Hotdog with relish";
 				break;
 			default:
 				Debug.Log("Wrong item type.");
@@ -46,13 +49,13 @@ public class OrderPanelManager : MonoBehaviour {
 		}
 
 		if (position == 1) {
-			panelOneText.text = orderText;
+			panelOneText.text = "Order #1: " + orderText;
 		}
 		else if (position == 2) {
-			panelTwoText.text = orderText;
+			panelTwoText.text = "Order #2: " +  orderText;
 		}
 		else {
-			panelThreeText.text = orderText;
+			panelThreeText.text = "Order #3: " +  orderText;
 		}
 	}
 

@@ -42,6 +42,8 @@ public class SelectorController : MonoBehaviour {
 				return Item.KETCHUP;
 			case 4:
 				return Item.MUSTARD;
+			case 5:
+				return Item.RELISH_JAR;
 			default:
 				Debug.Log("Current position out of range");
 				return Item.NONE;
@@ -66,6 +68,9 @@ public class SelectorController : MonoBehaviour {
 				break;
 			case 4:
 				newPos = new Vector3(10.36f, 7.121f, -0.552f);
+				break;
+			case 5:
+				newPos = new Vector3(10.36f, 6.724f, -0.847f);
 				break;
 			default:
 				Debug.Log("Index out of range");

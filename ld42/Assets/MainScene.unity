@@ -113,6 +113,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &48623632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 48623633}
+  - component: {fileID: 48623635}
+  - component: {fileID: 48623634}
+  m_Layer: 5
+  m_Name: RelishText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &48623633
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 48623632}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9996878, y: 0.99968797, z: 0.99968797}
+  m_Children: []
+  m_Father: {fileID: 1533129722}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3.7999544, y: -109.5}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &48623634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 48623632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 25
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Relish
+--- !u!222 &48623635
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 48623632}
+  m_CullTransparentMesh: 0
 --- !u!1 &79134202
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +330,7 @@ MonoBehaviour:
   microwaveStored: 0
   ketchupStored: 1
   mustardStored: 1
+  relishStored: 1
   moneyText: {fileID: 892533466}
 --- !u!4 &146259769
 Transform:
@@ -319,6 +395,7 @@ MonoBehaviour:
   microWaveText: {fileID: 1792168760}
   ketchupText: {fileID: 780979965}
   mustardText: {fileID: 627494764}
+  relishText: {fileID: 48623634}
 --- !u!114 &146259774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +565,8 @@ MonoBehaviour:
     type: 2}
   mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
     type: 2}
+  relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
+  relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
 --- !u!1 &209390618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1391,8 @@ MonoBehaviour:
     type: 2}
   mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
     type: 2}
+  relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
+  relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
 --- !u!4 &760149135
 Transform:
   m_ObjectHideFlags: 0
@@ -1426,7 +1507,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 840682475}
   m_LocalRotation: {x: 0.31441155, y: -0, z: -0, w: 0.94928676}
-  m_LocalPosition: {x: 10.36, y: 7.121, z: -0.552}
+  m_LocalPosition: {x: 10.36, y: 6.785, z: -0.802}
   m_LocalScale: {x: 0.43128, y: 0.20000005, z: 0.100000024}
   m_Children:
   - {fileID: 607563179}
@@ -1624,6 +1705,8 @@ MonoBehaviour:
     type: 2}
   mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
     type: 2}
+  relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
+  relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
 --- !u!4 &919786748
 Transform:
   m_ObjectHideFlags: 0
@@ -1890,6 +1973,8 @@ MonoBehaviour:
     type: 2}
   mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
     type: 2}
+  relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
+  relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
 --- !u!4 &1046744970
 Transform:
   m_ObjectHideFlags: 0
@@ -1953,6 +2038,8 @@ MonoBehaviour:
     type: 2}
   mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
     type: 2}
+  relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
+  relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
 --- !u!4 &1085695088
 Transform:
   m_ObjectHideFlags: 0
@@ -2301,6 +2388,7 @@ RectTransform:
   - {fileID: 1792168759}
   - {fileID: 780979964}
   - {fileID: 627494763}
+  - {fileID: 48623633}
   m_Father: {fileID: 216947920}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2530,6 +2618,8 @@ MonoBehaviour:
     type: 2}
   mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
     type: 2}
+  relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
+  relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
 --- !u!4 &1703919886
 Transform:
   m_ObjectHideFlags: 0
@@ -2996,6 +3086,8 @@ MonoBehaviour:
     type: 2}
   mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
     type: 2}
+  relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
+  relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
 --- !u!4 &2126305313
 Transform:
   m_ObjectHideFlags: 0

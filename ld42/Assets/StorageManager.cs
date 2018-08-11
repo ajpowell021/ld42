@@ -10,6 +10,7 @@ public class StorageManager : MonoBehaviour {
 	public Text microWaveText;
 	public Text ketchupText;
 	public Text mustardText;
+	public Text relishText;
 
 	// Classes
 
@@ -62,6 +63,13 @@ public class StorageManager : MonoBehaviour {
 		else {
 			mustardText.color = Color.gray;
 		}
+
+		if (stateManager.relishStored) {
+			relishText.color = Color.black;
+		}
+		else {
+			relishText.color = Color.gray;
+		}
 	}
 
 	// Public Functions
@@ -83,6 +91,9 @@ public class StorageManager : MonoBehaviour {
 				break;
 			case Item.MUSTARD:
 				toggleMustardText();
+				break;
+			case Item.RELISH_JAR:
+				toggleRelishText();
 				break;
 			default:
 				Debug.Log("Wrong item to toggle.");
@@ -144,4 +155,15 @@ public class StorageManager : MonoBehaviour {
 			mustardText.color = Color.black;
 		}
 	}
+	public void toggleRelishText() {
+		if (stateManager.relishStored) {
+			stateManager.setStored(Item.RELISH_JAR, false);
+			relishText.color = Color.gray;
+		}
+		else {
+			stateManager.setStored(Item.RELISH_JAR, true);
+			relishText.color = Color.black;
+		}
+	}
+
 }
