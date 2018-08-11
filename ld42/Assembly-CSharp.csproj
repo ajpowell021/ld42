@@ -63,6 +63,7 @@
     <Compile Include="Assets\Enums.cs" />
     <Compile Include="Assets\InputManager.cs" />
     <Compile Include="Assets\ItemManager.cs" />
+    <Compile Include="Assets\OrderPanelManager.cs" />
     <Compile Include="Assets\PlayerManager.cs" />
     <Compile Include="Assets\SelectorController.cs" />
     <Compile Include="Assets\SoundManager.cs" />

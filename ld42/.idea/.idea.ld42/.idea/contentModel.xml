@@ -15,6 +15,7 @@
         <e p="Enums.cs" t="Include" />
         <e p="InputManager.cs" t="Include" />
         <e p="ItemManager.cs" t="Include" />
+        <e p="OrderPanelManager.cs" t="Include" />
         <e p="PlayerManager.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">

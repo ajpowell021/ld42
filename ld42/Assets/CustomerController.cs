@@ -18,16 +18,17 @@ public class CustomerController : MonoBehaviour {
 
 	private StateManager stateManager;
 	private CustomerManager customerManager;
+	private OrderPanelManager orderPanelManager;
 
 	// Init
 
 	private void Awake() {
 		stateManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<StateManager>();
 		customerManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<CustomerManager>();
+		orderPanelManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<OrderPanelManager>();
 	}
 
 	private void Start() {
-		createRandomRecipe();
 		startTime = Time.time;
 		startingPosition = transform.position;
 		positionToWalkTo = customerManager.getSpawnLocation(idNumber);
@@ -56,11 +57,11 @@ public class CustomerController : MonoBehaviour {
 			gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, positionToWalkTo, fractionJourney);
 
 			if (transform.position.z >= 2.3f) {
-				// turn to the left.
 				gameObject.transform.eulerAngles = new Vector3(0, 90, 0);
+				createRandomRecipe();
+				orderPanelManager.setOrderText(idNumber, itemWanted);
+				orderPanelManager.showPanel(idNumber);
 				walkUp = false;
-				// make recipe.
-				// show recipe.
 			}
 		}
 	}
@@ -72,7 +73,7 @@ public class CustomerController : MonoBehaviour {
 	}
 
 	public void createRandomRecipe() {
-		int roll = Random.Range(0, 1);
+		int roll = Random.Range(0, 2);
 
 		switch (roll) {
 
@@ -92,5 +93,6 @@ public class CustomerController : MonoBehaviour {
 		positionToWalkTo = transform.position;
 		positionToWalkTo.z = -5;
 		walkAway = true;
+		orderPanelManager.hidePanel(idNumber);
 	}
 }

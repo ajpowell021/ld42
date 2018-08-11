@@ -104,6 +104,41 @@ public class InputManager : MonoBehaviour {
                         soundManager.playErrorSound();
                     }
                 }
+
+                if (Input.GetKeyDown(KeyCode.Alpha2)) {
+                    bool success = customerManager.checkIfRecipeMatchesHeldItem(2);
+                    if (success) {
+                        stateManager.addMoney(5);
+                        customerManager.removeCustomer(2);
+                        counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+                        itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+                        soundManager.playMoneySound();
+                    }
+                    else {
+                        // No money.
+                        customerManager.removeCustomer(2);
+                        counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+                        itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+                        soundManager.playErrorSound();
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha3)) {
+                    bool success = customerManager.checkIfRecipeMatchesHeldItem(3);
+                    if (success) {
+                        stateManager.addMoney(5);
+                        customerManager.removeCustomer(3);
+                        counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+                        itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+                        soundManager.playMoneySound();
+                    }
+                    else {
+                        // No money.
+                        customerManager.removeCustomer(3);
+                        counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+                        itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+                        soundManager.playErrorSound();
+                    }
+                }
             }
         }
     }
