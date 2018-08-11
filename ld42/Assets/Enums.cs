@@ -5,7 +5,8 @@ using UnityEngine;
 public enum PlayerPostion {
     LEFT,
     CENTER,
-    RIGHT
+    RIGHT,
+    STORAGE
 }
 
 public enum PlayerDirection {
@@ -33,5 +34,6 @@ public enum CounterPosition {
     FRONT_LEFT,
     FRONT_CENTER,
     FRONT_RIGHT,
-    HAT
+    HAT,
+    STORAGE
 }

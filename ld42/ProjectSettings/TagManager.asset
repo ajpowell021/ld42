@@ -14,6 +14,7 @@ TagManager:
   - FrontRight
   - Hat
   - CounterController
+  - StoragePanel
   layers:
   - Default
   - TransparentFX

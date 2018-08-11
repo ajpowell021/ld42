@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour {
 	private StateManager stateManager;
 	private CounterManager counterManager;
 	private ItemManager itemManager;
+	private CameraManager cameraManager;
 
 	// GameObjects
 
@@ -20,6 +21,7 @@ public class PlayerManager : MonoBehaviour {
 		stateManager = gameObject.GetComponent<StateManager>();
 		counterManager = gameObject.GetComponent<CounterManager>();
 		itemManager = gameObject.GetComponent<ItemManager>();
+		cameraManager = gameObject.GetComponent<CameraManager>();
 		chef = GameObject.FindGameObjectWithTag("Chef");
 	}
 
@@ -40,7 +42,13 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	public void moveLeft() {
-		if (stateManager.currentPlayerPosition != PlayerPostion.LEFT) {
+		if (stateManager.currentPlayerPosition == PlayerPostion.STORAGE) {
+			stateManager.setPlayerPosition(PlayerPostion.RIGHT);
+			stateManager.setPlayerDirection(PlayerDirection.DOWN);
+			chef.transform.eulerAngles = new Vector3(0, 180, 0);
+			cameraManager.hidePanel();
+		}
+		else if (stateManager.currentPlayerPosition != PlayerPostion.LEFT) {
 			if (stateManager.currentPlayerPosition == PlayerPostion.CENTER) {
 				stateManager.setPlayerPosition(PlayerPostion.LEFT);
 				chef.transform.position = new Vector3(3, 1, 6);
@@ -55,7 +63,7 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	public void moveRight() {
-		if (stateManager.currentPlayerPosition != PlayerPostion.RIGHT) {
+		if (stateManager.currentPlayerPosition != PlayerPostion.RIGHT && stateManager.currentPlayerPosition != PlayerPostion.STORAGE) {
 			if (stateManager.currentPlayerPosition == PlayerPostion.CENTER) {
 				stateManager.setPlayerPosition(PlayerPostion.RIGHT);
 				chef.transform.position = new Vector3(7.6f, 1, 6);
@@ -67,9 +75,14 @@ public class PlayerManager : MonoBehaviour {
 				itemManager.moveHatItem(new Vector3(5.3f, 3.7f, 6));
 			}
 		}
+		else if(stateManager.currentPlayerPosition != PlayerPostion.STORAGE) {
+			stateManager.setPlayerPosition(PlayerPostion.STORAGE);
+			cameraManager.showPanel();
+			chef.transform.eulerAngles = new Vector3(0, 90, 0);
+		}
 	}
 
-	public void pickUp() {
+	public void use() {
 		if (stateManager.currentHatItem == Item.NONE) {
 			// Attempt to use counter.
 			Item counterItem = counterManager.getItemOnSpecificCounter(stateManager.chefCounterPosition);
@@ -79,6 +92,16 @@ public class PlayerManager : MonoBehaviour {
 			// Attempt to set thing down.
 			Item counterItem = counterManager.getItemOnSpecificCounter(stateManager.chefCounterPosition);
 			setDownItemPlayerAction(counterItem);
+		}
+	}
+
+	public void pickUp() {
+		if (stateManager.currentHatItem == Item.NONE) {
+			Item counterItem = counterManager.getItemOnSpecificCounter(stateManager.chefCounterPosition);
+			playerPickUpAction(counterItem);
+		}
+		else {
+			Debug.Log("Already holding somthing.");
 		}
 	}
 
@@ -166,6 +189,13 @@ public class PlayerManager : MonoBehaviour {
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
 				}
 				break;
+			case Item.BREADBOX:
+				if (stateManager.currentHatItem == Item.BUN) {
+					// Put bun back in box.
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+				}
+				break;
 			case Item.BUN:
 				if (stateManager.currentHatItem == Item.COOKED_DOG) {
 					// Put cooked dog into bun.
@@ -179,5 +209,11 @@ public class PlayerManager : MonoBehaviour {
 				Debug.Log("Wrong item set down");
 				break;
 		}
+	}
+
+	private void playerPickUpAction(Item counterItem) {
+		counterManager.setItemHeldOnCounter(CounterPosition.HAT, counterItem);
+		itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+		counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.NONE);
 	}
 }

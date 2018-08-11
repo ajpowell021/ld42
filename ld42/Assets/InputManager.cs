@@ -20,7 +20,8 @@ public class InputManager : MonoBehaviour {
 
     private void Update() {
         checkMovementInputs();
-        checkPickInputs();
+        checkUseInputs();
+        checkPickUpInputs();
     }
 
     // Functions
@@ -40,8 +41,14 @@ public class InputManager : MonoBehaviour {
         }
     }
 
-    private void checkPickInputs() {
+    private void checkUseInputs() {
         if (Input.GetKeyDown(KeyCode.Space)) {
+            playerManager.use();
+        }
+    }
+
+    private void checkPickUpInputs() {
+        if (Input.GetKeyDown(KeyCode.Z)) {
             playerManager.pickUp();
         }
     }

@@ -58,5 +58,8 @@ public class StateManager : MonoBehaviour {
 		         && currentPlayerPosition == PlayerPostion.RIGHT) {
 			chefCounterPosition = CounterPosition.FRONT_RIGHT;
 		}
+		else if (currentPlayerPosition == PlayerPostion.STORAGE) {
+			chefCounterPosition = CounterPosition.STORAGE;
+		}
 	}
 }
