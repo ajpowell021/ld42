@@ -9,9 +9,11 @@ public class InputManager : MonoBehaviour {
     private StateManager stateManager;
     private PlayerManager playerManager;
     private SelectorController selectorController;
+    private CustomerManager customerManager;
     private CounterManager counterManager;
     private StorageManager storageManager;
     private ItemManager itemManager;
+    private SoundManager soundManager;
 
     // Init
 
@@ -20,7 +22,9 @@ public class InputManager : MonoBehaviour {
         playerManager = gameObject.GetComponent<PlayerManager>();
         counterManager = gameObject.GetComponent<CounterManager>();
         storageManager = gameObject.GetComponent<StorageManager>();
+        customerManager = gameObject.GetComponent<CustomerManager>();
         itemManager = gameObject.GetComponent<ItemManager>();
+        soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
         selectorController = GameObject.FindGameObjectWithTag("Selector").GetComponent<SelectorController>();
     }
 
@@ -31,6 +35,7 @@ public class InputManager : MonoBehaviour {
         checkUseInputs();
         checkPickUpInputs();
         checkSelectorInputs();
+        checkRecipeTurnIn();
     }
 
     // Functions
@@ -75,6 +80,28 @@ public class InputManager : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.Space)) {
                playerManager.playerStorageAction();
+            }
+        }
+    }
+
+    private void checkRecipeTurnIn() {
+        if (stateManager.currentHatItem != Item.NONE) {
+            if (Input.GetKeyDown(KeyCode.Alpha1)) {
+                bool success = customerManager.checkIfRecipeMatchesHeldItem(1);
+                if (success) {
+                    stateManager.addMoney(5);
+                    customerManager.removeCustomer(1);
+                    counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+                    itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+                    soundManager.playMoneySound();
+                }
+                else {
+                    // No money.
+                    customerManager.removeCustomer(1);
+                    counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+                    itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+                    soundManager.playErrorSound();
+                }
             }
         }
     }

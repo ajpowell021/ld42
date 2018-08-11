@@ -57,11 +57,14 @@
     <Compile Include="Assets\CameraManager.cs" />
     <Compile Include="Assets\CounterContoller.cs" />
     <Compile Include="Assets\CounterManager.cs" />
+    <Compile Include="Assets\CustomerController.cs" />
+    <Compile Include="Assets\CustomerManager.cs" />
     <Compile Include="Assets\Enums.cs" />
     <Compile Include="Assets\InputManager.cs" />
     <Compile Include="Assets\ItemManager.cs" />
     <Compile Include="Assets\PlayerManager.cs" />
     <Compile Include="Assets\SelectorController.cs" />
+    <Compile Include="Assets\SoundManager.cs" />
     <Compile Include="Assets\StateManager.cs" />
     <Compile Include="Assets\StorageManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">

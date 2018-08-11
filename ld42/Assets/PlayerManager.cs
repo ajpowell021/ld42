@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour {
 	private CameraManager cameraManager;
 	private StorageManager storageManager;
 	private SelectorController selectorController;
+	private SoundManager soundManager;
 
 	// GameObjects
 
@@ -25,6 +26,7 @@ public class PlayerManager : MonoBehaviour {
 		itemManager = gameObject.GetComponent<ItemManager>();
 		cameraManager = gameObject.GetComponent<CameraManager>();
 		storageManager = gameObject.GetComponent<StorageManager>();
+		soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
 		chef = GameObject.FindGameObjectWithTag("Chef");
 		selectorController = GameObject.FindGameObjectWithTag("Selector").GetComponent<SelectorController>();
 	}
@@ -36,6 +38,7 @@ public class PlayerManager : MonoBehaviour {
 			if (stateManager.currentPlayerDirection != PlayerDirection.UP) {
 				stateManager.setPlayerDirection(PlayerDirection.UP);
 				chef.transform.eulerAngles = new Vector3(0, 0, 0);
+				soundManager.playMovementSound();
 			}
 		}
 	}
@@ -45,6 +48,7 @@ public class PlayerManager : MonoBehaviour {
 			if (stateManager.currentPlayerDirection != PlayerDirection.DOWN) {
 				stateManager.setPlayerDirection(PlayerDirection.DOWN);
 				chef.transform.eulerAngles = new Vector3(0, 180, 0);
+				soundManager.playMovementSound();
 			}
 		}
 	}
@@ -54,6 +58,7 @@ public class PlayerManager : MonoBehaviour {
 			stateManager.setPlayerPosition(PlayerPostion.RIGHT);
 			stateManager.setPlayerDirection(PlayerDirection.DOWN);
 			chef.transform.eulerAngles = new Vector3(0, 180, 0);
+			soundManager.playMovementSound();
 			cameraManager.hidePanel();
 		}
 		else if (stateManager.currentPlayerPosition != PlayerPostion.LEFT) {
@@ -61,11 +66,13 @@ public class PlayerManager : MonoBehaviour {
 				stateManager.setPlayerPosition(PlayerPostion.LEFT);
 				chef.transform.position = new Vector3(3, 1, 6);
 				itemManager.moveHatItem(new Vector3(3, 3.7f, 6));
+				soundManager.playMovementSound();
 			}
 			else {
 				stateManager.setPlayerPosition(PlayerPostion.CENTER);
 				chef.transform.position = new Vector3(5.3f, 1, 6);
 				itemManager.moveHatItem(new Vector3(5.3f, 3.7f, 6));
+				soundManager.playMovementSound();
 			}
 		}
 	}
@@ -76,17 +83,20 @@ public class PlayerManager : MonoBehaviour {
 				stateManager.setPlayerPosition(PlayerPostion.RIGHT);
 				chef.transform.position = new Vector3(7.6f, 1, 6);
 				itemManager.moveHatItem(new Vector3(7.6f, 3.7f, 6));
+				soundManager.playMovementSound();
 			}
 			else {
 				stateManager.setPlayerPosition(PlayerPostion.CENTER);
 				chef.transform.position = new Vector3(5.3f, 1, 6);
 				itemManager.moveHatItem(new Vector3(5.3f, 3.7f, 6));
+				soundManager.playMovementSound();
 			}
 		}
 		else if(stateManager.currentPlayerPosition != PlayerPostion.STORAGE) {
 			stateManager.setPlayerPosition(PlayerPostion.STORAGE);
 			cameraManager.showPanel();
 			chef.transform.eulerAngles = new Vector3(0, 90, 0);
+			soundManager.playMovementSound();
 		}
 	}
 

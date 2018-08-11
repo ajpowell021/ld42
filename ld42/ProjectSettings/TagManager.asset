@@ -16,6 +16,8 @@ TagManager:
   - CounterController
   - StoragePanel
   - Selector
+  - Customer
+  - Sound
   layers:
   - Default
   - TransparentFX

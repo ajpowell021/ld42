@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StateManager : MonoBehaviour {
 
 	// State
 
+	public int money;
+
+	public float customerWalkingSpeed;
 	public PlayerDirection currentPlayerDirection;
 	public PlayerPostion currentPlayerPosition;
 
@@ -18,7 +22,14 @@ public class StateManager : MonoBehaviour {
 	public bool breadBoxStored;
 	public bool microwaveStored;
 
+	public Text moneyText;
+
 	// Functions
+
+	public void addMoney(int amount) {
+		money += amount;
+		moneyText.text = "$" + money;
+	}
 
 	public void setStored(Item item, bool set) {
 		switch (item) {

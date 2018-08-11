@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class SelectorController : MonoBehaviour {
 
+	// Classes
+
+	private SoundManager soundManager;
+
 	// State
 
 	public int currentPosition;
 
 	// Init
+
+	private void Awake() {
+		soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
+	}
 
 	private void Start() {
 		setNewPosition();
@@ -41,19 +49,20 @@ public class SelectorController : MonoBehaviour {
 		switch (currentPosition) {
 
 			case 0:
-				newPos = new Vector3(10, 9.9f, 1.59f);
+				newPos = new Vector3(10.36f, 8.567f, 0.523f);
 				break;
 			case 1:
-				newPos = new Vector3(10, 9.54f, 1.32f);
+				newPos = new Vector3(10.36f, 8.202f, 0.251f);
 				break;
 			case 2:
-				newPos = new Vector3(10, 9.2f, 1);
+				newPos = new Vector3(10.36f, 7.813f, -0.038f);
 				break;
 			default:
 				Debug.Log("Index out of range");
 				break;
 		}
 
+		soundManager.playMovementSound();
 		gameObject.transform.position = newPos;
 	}
 }

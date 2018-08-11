@@ -9,6 +9,8 @@
         <e p="CameraManager.cs" t="Include" />
         <e p="CounterContoller.cs" t="Include" />
         <e p="CounterManager.cs" t="Include" />
+        <e p="CustomerController.cs" t="Include" />
+        <e p="CustomerManager.cs" t="Include" />
         <e p="Enums.cs" t="Include" />
         <e p="InputManager.cs" t="Include" />
         <e p="ItemManager.cs" t="Include" />
@@ -21,6 +23,7 @@
           </e>
         </e>
         <e p="SelectorController.cs" t="Include" />
+        <e p="SoundManager.cs" t="Include" />
         <e p="StateManager.cs" t="Include" />
         <e p="StorageManager.cs" t="Include" />
       </e>

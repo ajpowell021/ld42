@@ -29,7 +29,7 @@ public class CameraManager : MonoBehaviour {
 				float distCovered = (Time.time - startTime) * driftSpeed;
 				float fractionJourney = distCovered / 4;
 
-				cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(9, 12, -3), fractionJourney);
+				cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(9, 11, -4.19f), fractionJourney);
 				if (cam.transform.position.x >= 9) {
 					moveCamRight = false;
 				}
@@ -39,7 +39,7 @@ public class CameraManager : MonoBehaviour {
 				float distCoverer = (Time.time - startTime) * driftSpeed;
 				float fractionJourney = distCoverer / 4;
 
-				cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(4, 12, -3), fractionJourney);
+				cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(5, 11, -4.19f), fractionJourney);
 				if (cam.transform.position.x <= 5) {
 					moveCamLeft = false;
 				}

@@ -22,12 +22,14 @@ public class CounterContoller : MonoBehaviour {
 
 	private ItemManager itemManager;
 	private StateManager stateManager;
+	private SoundManager soundManager;
 
 	// Init
 
 	private void Awake() {
 		itemManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<ItemManager>();
 		stateManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<StateManager>();
+		soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
 	}
 
 	// Public Functions
@@ -81,6 +83,7 @@ public class CounterContoller : MonoBehaviour {
 
 		if (newItem != null) {
 			setNewItemsTag(myCounterPosition, newItem);
+			soundManager.playPutDownSound();
 		}
 	}
 
@@ -118,5 +121,6 @@ public class CounterContoller : MonoBehaviour {
 		yield return new WaitForSeconds(amount);
 		itemManager.deleteAllItemsInPosition(myCounterPosition);
 		setCurrentItemHeld(Item.MICROWAVE_DONE);
+		soundManager.playMicrowaveSound();
 	}
 }
