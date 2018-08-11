@@ -8,12 +8,20 @@ public class InputManager : MonoBehaviour {
 
     private StateManager stateManager;
     private PlayerManager playerManager;
+    private SelectorController selectorController;
+    private CounterManager counterManager;
+    private StorageManager storageManager;
+    private ItemManager itemManager;
 
     // Init
 
     private void Awake() {
         stateManager = gameObject.GetComponent<StateManager>();
         playerManager = gameObject.GetComponent<PlayerManager>();
+        counterManager = gameObject.GetComponent<CounterManager>();
+        storageManager = gameObject.GetComponent<StorageManager>();
+        itemManager = gameObject.GetComponent<ItemManager>();
+        selectorController = GameObject.FindGameObjectWithTag("Selector").GetComponent<SelectorController>();
     }
 
     // Update
@@ -22,6 +30,7 @@ public class InputManager : MonoBehaviour {
         checkMovementInputs();
         checkUseInputs();
         checkPickUpInputs();
+        checkSelectorInputs();
     }
 
     // Functions
@@ -43,13 +52,30 @@ public class InputManager : MonoBehaviour {
 
     private void checkUseInputs() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            playerManager.use();
+            if (stateManager.currentPlayerPosition != PlayerPostion.STORAGE) {
+                playerManager.use();
+            }
         }
     }
 
     private void checkPickUpInputs() {
         if (Input.GetKeyDown(KeyCode.Z)) {
             playerManager.pickUp();
+        }
+    }
+
+    private void checkSelectorInputs() {
+        if (stateManager.currentPlayerPosition == PlayerPostion.STORAGE) {
+            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                selectorController.adjustPosition(-1);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+                selectorController.adjustPosition(1);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space)) {
+               playerManager.playerStorageAction();
+            }
         }
     }
 }

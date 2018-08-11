@@ -10,6 +10,8 @@ public class PlayerManager : MonoBehaviour {
 	private CounterManager counterManager;
 	private ItemManager itemManager;
 	private CameraManager cameraManager;
+	private StorageManager storageManager;
+	private SelectorController selectorController;
 
 	// GameObjects
 
@@ -22,7 +24,9 @@ public class PlayerManager : MonoBehaviour {
 		counterManager = gameObject.GetComponent<CounterManager>();
 		itemManager = gameObject.GetComponent<ItemManager>();
 		cameraManager = gameObject.GetComponent<CameraManager>();
+		storageManager = gameObject.GetComponent<StorageManager>();
 		chef = GameObject.FindGameObjectWithTag("Chef");
+		selectorController = GameObject.FindGameObjectWithTag("Selector").GetComponent<SelectorController>();
 	}
 
 	// Public Functions
@@ -169,7 +173,6 @@ public class PlayerManager : MonoBehaviour {
 
 	private void setDownItemPlayerAction(Item counterItem) {
 		// Player has something in hat.
-
 		switch (counterItem) {
 
 			case Item.NONE:
@@ -219,5 +222,46 @@ public class PlayerManager : MonoBehaviour {
 		counterManager.setItemHeldOnCounter(CounterPosition.HAT, counterItem);
 		itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 		counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.NONE);
+	}
+
+	public void playerStorageAction() {
+		if (stateManager.currentHatItem == Item.NONE) {
+			// Try to get item from storage.
+			Item itemToGet = selectorController.getItemAtCurrentPosition();
+			if (stateManager.checkIfItemIsStored(itemToGet)) {
+				// Get item from storage.
+				storageManager.toggleItemText(itemToGet);
+				counterManager.setItemHeldOnCounter(CounterPosition.HAT, itemToGet);
+			}
+			else {
+				Debug.Log("Item is already out");
+			}
+		}
+		else {
+			// Try to put item in storage.
+			Item heldItem = stateManager.currentHatItem;
+
+			switch (heldItem) {
+
+				case Item.FRIDGE:
+					storageManager.toggleFridgeText();
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					break;
+				case Item.BREADBOX:
+					storageManager.toggleBreadBoxText();
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					break;
+				case Item.MICROWAVE_OFF:
+					storageManager.toggleMicrowaveText();
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					break;
+				default:
+					Debug.Log("held item not handled.");
+					break;
+			}
+		}
 	}
 }

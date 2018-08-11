@@ -15,6 +15,7 @@ TagManager:
   - Hat
   - CounterController
   - StoragePanel
+  - Selector
   layers:
   - Default
   - TransparentFX

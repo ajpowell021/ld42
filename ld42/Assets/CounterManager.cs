@@ -34,6 +34,19 @@ public class CounterManager : MonoBehaviour {
 		return controller.currentItemHeld;
 	}
 
+	public CounterContoller getHatCounterContoller() {
+		List<GameObject> counters = getAllCounters();
+		for (int i = 0; i < counters.Count; i++) {
+			CounterContoller counterContoller = counters[i].GetComponent<CounterContoller>();
+			if (counterContoller.myCounterPosition == CounterPosition.HAT) {
+				return counterContoller;
+			}
+		}
+
+		Debug.Log("Couldn't find hat controller");
+		return null;
+	}
+
 	public void setItemHeldOnCounter(CounterPosition counterPosition, Item item) {
 		List<GameObject> counters = getAllCounters();
 		CounterContoller controller = null;

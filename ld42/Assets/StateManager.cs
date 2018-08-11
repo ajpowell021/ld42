@@ -14,7 +14,46 @@ public class StateManager : MonoBehaviour {
 
 	public float microwaveTime;
 
+	public bool fridgeStored;
+	public bool breadBoxStored;
+	public bool microwaveStored;
+
 	// Functions
+
+	public void setStored(Item item, bool set) {
+		switch (item) {
+
+			case Item.FRIDGE:
+				fridgeStored = set;
+				break;
+			case Item.BREADBOX:
+				breadBoxStored = set;
+				break;
+			case Item.MICROWAVE_OFF:
+				microwaveStored = set;
+				break;
+			default:
+				Debug.Log("Can't store item");
+				break;
+		}
+	}
+
+	public bool checkIfItemIsStored(Item item) {
+
+		switch (item) {
+
+			case Item.FRIDGE:
+				return fridgeStored;
+			case Item.BREADBOX:
+				return breadBoxStored;
+			case Item.MICROWAVE_OFF:
+				return microwaveStored;
+			default:
+				Debug.Log("Wrong item type.");
+				return false;
+		}
+	}
+
 
 	public void setPlayerPosition(PlayerPostion newPos) {
 		currentPlayerPosition = newPos;

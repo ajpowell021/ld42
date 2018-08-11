@@ -20,7 +20,9 @@
             </e>
           </e>
         </e>
+        <e p="SelectorController.cs" t="Include" />
         <e p="StateManager.cs" t="Include" />
+        <e p="StorageManager.cs" t="Include" />
       </e>
       <e p="ld42.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
