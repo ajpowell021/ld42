@@ -183,7 +183,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &146259770
 MonoBehaviour:
@@ -321,7 +321,53 @@ MonoBehaviour:
   doneMicro: {fileID: 1098254809735142, guid: f45b9bdb8f58ee14b91944cc00c61d31, type: 2}
   cookedHotdog: {fileID: 1415216051455858, guid: 4f726638f3c48d14aaf6ed17e12f7470,
     type: 2}
-  fridge: {fileID: 0}
+  fridge: {fileID: 1120248956420206, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+  breadBox: {fileID: 1321074552252762, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+  bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
+  hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
+    type: 2}
+--- !u!1001 &416391785
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4069774630368488, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.672
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069774630368488, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.928
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069774630368488, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.232
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069774630368488, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069774630368488, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069774630368488, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069774630368488, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069774630368488, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &528084906
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +442,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &534669902
 GameObject:
@@ -476,6 +522,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 37.445004, y: 0, z: 0}
+--- !u!1001 &597148343
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4209999276566520, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.771
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209999276566520, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.922
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209999276566520, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 7.487
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209999276566520, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209999276566520, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209999276566520, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209999276566520, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209999276566520, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &642199469
 Prefab:
   m_ObjectHideFlags: 0
@@ -513,7 +601,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4163599012959166, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1947791625988648, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
       propertyPath: m_TagString
@@ -557,7 +645,11 @@ MonoBehaviour:
   doneMicro: {fileID: 1098254809735142, guid: f45b9bdb8f58ee14b91944cc00c61d31, type: 2}
   cookedHotdog: {fileID: 1415216051455858, guid: 4f726638f3c48d14aaf6ed17e12f7470,
     type: 2}
-  fridge: {fileID: 0}
+  fridge: {fileID: 1120248956420206, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+  breadBox: {fileID: 1321074552252762, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+  bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
+  hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
+    type: 2}
 --- !u!4 &760149135
 Transform:
   m_ObjectHideFlags: 0
@@ -569,7 +661,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919786746
 GameObject:
@@ -606,7 +698,11 @@ MonoBehaviour:
   doneMicro: {fileID: 1098254809735142, guid: f45b9bdb8f58ee14b91944cc00c61d31, type: 2}
   cookedHotdog: {fileID: 1415216051455858, guid: 4f726638f3c48d14aaf6ed17e12f7470,
     type: 2}
-  fridge: {fileID: 0}
+  fridge: {fileID: 1120248956420206, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+  breadBox: {fileID: 1321074552252762, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+  bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
+  hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
+    type: 2}
 --- !u!4 &919786748
 Transform:
   m_ObjectHideFlags: 0
@@ -618,7 +714,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046744968
 GameObject:
@@ -655,7 +751,11 @@ MonoBehaviour:
   doneMicro: {fileID: 1098254809735142, guid: f45b9bdb8f58ee14b91944cc00c61d31, type: 2}
   cookedHotdog: {fileID: 1415216051455858, guid: 4f726638f3c48d14aaf6ed17e12f7470,
     type: 2}
-  fridge: {fileID: 0}
+  fridge: {fileID: 1120248956420206, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+  breadBox: {fileID: 1321074552252762, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+  bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
+  hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
+    type: 2}
 --- !u!4 &1046744970
 Transform:
   m_ObjectHideFlags: 0
@@ -667,7 +767,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085695086
 GameObject:
@@ -704,7 +804,11 @@ MonoBehaviour:
   doneMicro: {fileID: 1098254809735142, guid: f45b9bdb8f58ee14b91944cc00c61d31, type: 2}
   cookedHotdog: {fileID: 1415216051455858, guid: 4f726638f3c48d14aaf6ed17e12f7470,
     type: 2}
-  fridge: {fileID: 0}
+  fridge: {fileID: 1120248956420206, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+  breadBox: {fileID: 1321074552252762, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+  bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
+  hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
+    type: 2}
 --- !u!4 &1085695088
 Transform:
   m_ObjectHideFlags: 0
@@ -716,84 +820,8 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1171043362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 71dfed0ad8a07d149acb7baf893cdfbd,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1171043365}
-  - component: {fileID: 1171043364}
-  - component: {fileID: 1171043363}
-  m_Layer: 0
-  m_Name: fridge
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &1171043363
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2300000, guid: 71dfed0ad8a07d149acb7baf893cdfbd,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1171043362}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: ba243ae1a5106254a88a6e59bc63f380, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1171043364
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 3300000, guid: 71dfed0ad8a07d149acb7baf893cdfbd,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1171043362}
-  m_Mesh: {fileID: 4300000, guid: 71dfed0ad8a07d149acb7baf893cdfbd, type: 3}
---- !u!4 &1171043365
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 71dfed0ad8a07d149acb7baf893cdfbd,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1171043362}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 7.771, y: 1.922, z: 7.487}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1703919884
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,14 +850,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCounterPosition: 5
-  currentItemHeld: 3
+  currentItemHeld: 8
   hotdog: {fileID: 1466765395700294, guid: cd9177dc15a33214ea266362c53caaae, type: 2}
   offMicro: {fileID: 1947791625988648, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
   onMicro: {fileID: 1740107890660694, guid: 3c2d67ac27c5fd24eabdb78f88996bcc, type: 2}
   doneMicro: {fileID: 1098254809735142, guid: f45b9bdb8f58ee14b91944cc00c61d31, type: 2}
   cookedHotdog: {fileID: 1415216051455858, guid: 4f726638f3c48d14aaf6ed17e12f7470,
     type: 2}
-  fridge: {fileID: 0}
+  fridge: {fileID: 1120248956420206, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+  breadBox: {fileID: 1321074552252762, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+  bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
+  hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
+    type: 2}
 --- !u!4 &1703919886
 Transform:
   m_ObjectHideFlags: 0
@@ -841,7 +873,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1826386072
 Prefab:
@@ -880,7 +912,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4055806149637318, guid: cd9177dc15a33214ea266362c53caaae, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1466765395700294, guid: cd9177dc15a33214ea266362c53caaae, type: 2}
       propertyPath: m_TagString
@@ -964,7 +996,7 @@ Transform:
   m_Children:
   - {fileID: 172870735}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2126305311
 GameObject:
@@ -1001,7 +1033,11 @@ MonoBehaviour:
   doneMicro: {fileID: 1098254809735142, guid: f45b9bdb8f58ee14b91944cc00c61d31, type: 2}
   cookedHotdog: {fileID: 1415216051455858, guid: 4f726638f3c48d14aaf6ed17e12f7470,
     type: 2}
-  fridge: {fileID: 0}
+  fridge: {fileID: 1120248956420206, guid: 6d65b062f2d4cd94e82fbcc807a042d4, type: 2}
+  breadBox: {fileID: 1321074552252762, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
+  bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
+  hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
+    type: 2}
 --- !u!4 &2126305313
 Transform:
   m_ObjectHideFlags: 0
@@ -1013,5 +1049,5 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -21,7 +21,9 @@ public enum Item {
     MICROWAVE_OFF,
     MICROWAVE_COOKING,
     MICROWAVE_DONE,
-    FRIDGE
+    FRIDGE,
+    BREADBOX,
+    HOTDOG_WITH_BUN
 }
 
 public enum CounterPosition {

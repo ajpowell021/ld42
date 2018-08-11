@@ -14,6 +14,9 @@ public class CounterContoller : MonoBehaviour {
 	public GameObject doneMicro;
 	public GameObject cookedHotdog;
 	public GameObject fridge;
+	public GameObject breadBox;
+	public GameObject bun;
+	public GameObject hotdogWithBun;
 
 	// Classes
 
@@ -58,6 +61,15 @@ public class CounterContoller : MonoBehaviour {
 				break;
 			case Item.FRIDGE:
 				newItem = Instantiate(fridge, transform.position, Quaternion.Euler(0, 180, 0));
+				break;
+			case Item.BREADBOX:
+				newItem = Instantiate(breadBox, transform.position, Quaternion.Euler(0, 180, 0));
+				break;
+			case Item.BUN:
+				newItem = Instantiate(bun, transform.position, Quaternion.Euler(0, 180, 0));
+				break;
+			case Item.HOTDOG_WITH_BUN:
+				newItem = Instantiate(hotdogWithBun, transform.position, Quaternion.Euler(0, 180, 0));
 				break;
 			case Item.NONE:
 				// Do nothing

@@ -102,6 +102,18 @@ public class PlayerManager : MonoBehaviour {
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, counterItem);
 				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.NONE);
 				break;
+			case Item.BUN:
+				// Picks up bun.
+				itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+				counterManager.setItemHeldOnCounter(CounterPosition.HAT, counterItem);
+				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.NONE);
+				break;
+			case Item.HOTDOG_WITH_BUN:
+				// Picks up finished dog.
+				itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+				counterManager.setItemHeldOnCounter(CounterPosition.HAT, counterItem);
+				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.NONE);
+				break;
 			case Item.MICROWAVE_COOKING:
 				Debug.Log("Not done cooking");
 				break;
@@ -114,6 +126,10 @@ public class PlayerManager : MonoBehaviour {
 			case Item.FRIDGE:
 				// Get hotdog from fridge.
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.DOG);
+				break;
+			case Item.BREADBOX:
+				// Get bun from breadbox.
+				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.BUN);
 				break;
 			case Item.NONE:
 				Debug.Log("No item held, no item on counter");
@@ -147,6 +163,15 @@ public class PlayerManager : MonoBehaviour {
 				if (stateManager.currentHatItem == Item.DOG) {
 					// Put uncooked hotdog back in fridge.
 					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+				}
+				break;
+			case Item.BUN:
+				if (stateManager.currentHatItem == Item.COOKED_DOG) {
+					// Put cooked dog into bun.
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
+					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.HOTDOG_WITH_BUN);
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
 				}
 				break;
