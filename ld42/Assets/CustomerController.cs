@@ -73,7 +73,7 @@ public class CustomerController : MonoBehaviour {
 	}
 
 	public void createRandomRecipe() {
-		int roll = Random.Range(0, 2);
+		int roll = Random.Range(0, 5);
 
 		switch (roll) {
 
@@ -82,6 +82,15 @@ public class CustomerController : MonoBehaviour {
 				break;
 			case 1:
 				itemWanted = Item.COOKED_DOG;
+				break;
+			case 2:
+				itemWanted = Item.HOTDOG_BUN_W_KETCHUP;
+				break;
+			case 3:
+				itemWanted = Item.HOTDOG_BUN_W_MUSTARD;
+				break;
+			case 4:
+				itemWanted = Item.HOTDOG_K_AND_M;
 				break;
 		}
 	}

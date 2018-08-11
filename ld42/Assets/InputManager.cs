@@ -148,7 +148,8 @@ public class InputManager : MonoBehaviour {
 
         Item item = stateManager.currentHatItem;
 
-        if (item == Item.BREADBOX || item == Item.DOG || item == Item.BUN || item == Item.MICROWAVE_OFF || item == Item.FRIDGE) {
+        if (item == Item.BREADBOX || item == Item.DOG || item == Item.BUN || item == Item.MICROWAVE_OFF || item == Item.FRIDGE
+            || item == Item.KETCHUP || item == Item.MUSTARD ) {
             return true;
         }
         else {

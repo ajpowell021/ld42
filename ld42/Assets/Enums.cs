@@ -24,7 +24,12 @@ public enum Item {
     MICROWAVE_DONE,
     FRIDGE,
     BREADBOX,
-    HOTDOG_WITH_BUN
+    HOTDOG_WITH_BUN,
+    KETCHUP,
+    MUSTARD,
+    HOTDOG_BUN_W_KETCHUP,
+    HOTDOG_BUN_W_MUSTARD,
+    HOTDOG_K_AND_M
 }
 
 public enum CounterPosition {

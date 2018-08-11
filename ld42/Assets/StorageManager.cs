@@ -8,6 +8,8 @@ public class StorageManager : MonoBehaviour {
 	public Text fridgeText;
 	public Text breadBoxText;
 	public Text microWaveText;
+	public Text ketchupText;
+	public Text mustardText;
 
 	// Classes
 
@@ -46,6 +48,20 @@ public class StorageManager : MonoBehaviour {
 		else {
 			microWaveText.color = Color.gray;
 		}
+
+		if (stateManager.ketchupStored) {
+			ketchupText.color = Color.black;
+		}
+		else {
+			ketchupText.color = Color.gray;
+		}
+
+		if (stateManager.mustardStored) {
+			mustardText.color = Color.black;
+		}
+		else {
+			mustardText.color = Color.gray;
+		}
 	}
 
 	// Public Functions
@@ -61,6 +77,12 @@ public class StorageManager : MonoBehaviour {
 				break;
 			case Item.MICROWAVE_OFF:
 				toggleMicrowaveText();
+				break;
+			case Item.KETCHUP:
+				toggleKetchupText();
+				break;
+			case Item.MUSTARD:
+				toggleMustardText();
 				break;
 			default:
 				Debug.Log("Wrong item to toggle.");
@@ -98,6 +120,28 @@ public class StorageManager : MonoBehaviour {
 		else {
 			stateManager.setStored(Item.MICROWAVE_OFF, true);
 			microWaveText.color = Color.black;
+		}
+	}
+
+	public void toggleKetchupText() {
+		if (stateManager.ketchupStored) {
+			stateManager.setStored(Item.KETCHUP, false);
+			ketchupText.color = Color.gray;
+		}
+		else {
+			stateManager.setStored(Item.KETCHUP, true);
+			ketchupText.color = Color.black;
+		}
+	}
+
+	public void toggleMustardText() {
+		if (stateManager.mustardStored) {
+			stateManager.setStored(Item.MUSTARD, false);
+			mustardText.color = Color.gray;
+		}
+		else {
+			stateManager.setStored(Item.MUSTARD, true);
+			mustardText.color = Color.black;
 		}
 	}
 }

@@ -253,6 +253,8 @@ MonoBehaviour:
   fridgeStored: 0
   breadBoxStored: 0
   microwaveStored: 0
+  ketchupStored: 1
+  mustardStored: 1
   moneyText: {fileID: 892533466}
 --- !u!4 &146259769
 Transform:
@@ -315,6 +317,8 @@ MonoBehaviour:
   fridgeText: {fileID: 209390620}
   breadBoxText: {fileID: 1496876061}
   microWaveText: {fileID: 1792168760}
+  ketchupText: {fileID: 780979965}
+  mustardText: {fileID: 627494764}
 --- !u!114 &146259774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,7 +448,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 172870734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 27.09, z: 0}
+  m_LocalPosition: {x: 0, y: 27, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1882453116}
@@ -473,6 +477,16 @@ MonoBehaviour:
   breadBox: {fileID: 1321074552252762, guid: db7869383c8b79743a98c4a7b3c6e0d1, type: 2}
   bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
   hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
+    type: 2}
+  hotdogBunKetchup: {fileID: 1582932234769736, guid: a17f49994705bf34ca8b7ed64024ae10,
+    type: 2}
+  hotdogBunMustard: {fileID: 1239610520325382, guid: 4d9ad67c3253a224088bc574e8c4d524,
+    type: 2}
+  hotdogBunKandM: {fileID: 1720944705625996, guid: c59f0d0ca9227f74fb636c4337758c10,
+    type: 2}
+  ketchupBottle: {fileID: 1198879939071202, guid: 1f2f3e1a75ff927448dbb30ebe14e0ba,
+    type: 2}
+  mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
     type: 2}
 --- !u!1 &209390618
 GameObject:
@@ -889,7 +903,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 88
+  field of view: 67
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1127,6 +1141,81 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 623038747}
   m_CullTransparentMesh: 0
+--- !u!1 &627494762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 627494763}
+  - component: {fileID: 627494765}
+  - component: {fileID: 627494764}
+  m_Layer: 5
+  m_Name: MustardText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &627494763
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 627494762}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9996878, y: 0.99968797, z: 0.99968797}
+  m_Children: []
+  m_Father: {fileID: 1533129722}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3.7999544, y: -65}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &627494764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 627494762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 25
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Mustard
+--- !u!222 &627494765
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 627494762}
+  m_CullTransparentMesh: 0
 --- !u!1001 &642199469
 Prefab:
   m_ObjectHideFlags: 0
@@ -1213,6 +1302,16 @@ MonoBehaviour:
   bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
   hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
     type: 2}
+  hotdogBunKetchup: {fileID: 1582932234769736, guid: a17f49994705bf34ca8b7ed64024ae10,
+    type: 2}
+  hotdogBunMustard: {fileID: 1239610520325382, guid: 4d9ad67c3253a224088bc574e8c4d524,
+    type: 2}
+  hotdogBunKandM: {fileID: 1720944705625996, guid: c59f0d0ca9227f74fb636c4337758c10,
+    type: 2}
+  ketchupBottle: {fileID: 1198879939071202, guid: 1f2f3e1a75ff927448dbb30ebe14e0ba,
+    type: 2}
+  mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
+    type: 2}
 --- !u!4 &760149135
 Transform:
   m_ObjectHideFlags: 0
@@ -1220,12 +1319,87 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 760149133}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.3, y: 2, z: 7.6}
+  m_LocalPosition: {x: 5.3, y: 1.9909999, z: 7.6}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &780979963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780979964}
+  - component: {fileID: 780979966}
+  - component: {fileID: 780979965}
+  m_Layer: 5
+  m_Name: KetchupText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &780979964
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780979963}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 0.9996878, y: 0.99968797, z: 0.99968797}
+  m_Children: []
+  m_Father: {fileID: 1533129722}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3.7999544, y: -28}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &780979965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780979963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 25
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Ketchup
+--- !u!222 &780979966
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780979963}
+  m_CullTransparentMesh: 0
 --- !u!1 &840682475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1426,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 840682475}
   m_LocalRotation: {x: 0.31441155, y: -0, z: -0, w: 0.94928676}
-  m_LocalPosition: {x: 10.36, y: 7.813, z: -0.038}
+  m_LocalPosition: {x: 10.36, y: 7.121, z: -0.552}
   m_LocalScale: {x: 0.43128, y: 0.20000005, z: 0.100000024}
   m_Children:
   - {fileID: 607563179}
@@ -1440,6 +1614,16 @@ MonoBehaviour:
   bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
   hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
     type: 2}
+  hotdogBunKetchup: {fileID: 1582932234769736, guid: a17f49994705bf34ca8b7ed64024ae10,
+    type: 2}
+  hotdogBunMustard: {fileID: 1239610520325382, guid: 4d9ad67c3253a224088bc574e8c4d524,
+    type: 2}
+  hotdogBunKandM: {fileID: 1720944705625996, guid: c59f0d0ca9227f74fb636c4337758c10,
+    type: 2}
+  ketchupBottle: {fileID: 1198879939071202, guid: 1f2f3e1a75ff927448dbb30ebe14e0ba,
+    type: 2}
+  mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
+    type: 2}
 --- !u!4 &919786748
 Transform:
   m_ObjectHideFlags: 0
@@ -1447,7 +1631,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 919786746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.6, y: 2, z: 7.6}
+  m_LocalPosition: {x: 7.6, y: 1.9909999, z: 7.6}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1696,6 +1880,16 @@ MonoBehaviour:
   bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
   hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
     type: 2}
+  hotdogBunKetchup: {fileID: 1582932234769736, guid: a17f49994705bf34ca8b7ed64024ae10,
+    type: 2}
+  hotdogBunMustard: {fileID: 1239610520325382, guid: 4d9ad67c3253a224088bc574e8c4d524,
+    type: 2}
+  hotdogBunKandM: {fileID: 1720944705625996, guid: c59f0d0ca9227f74fb636c4337758c10,
+    type: 2}
+  ketchupBottle: {fileID: 1198879939071202, guid: 1f2f3e1a75ff927448dbb30ebe14e0ba,
+    type: 2}
+  mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
+    type: 2}
 --- !u!4 &1046744970
 Transform:
   m_ObjectHideFlags: 0
@@ -1703,7 +1897,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1046744968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 2, z: 4.5}
+  m_LocalPosition: {x: 3, y: 1.9909999, z: 4.5}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1749,6 +1943,16 @@ MonoBehaviour:
   bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
   hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
     type: 2}
+  hotdogBunKetchup: {fileID: 1582932234769736, guid: a17f49994705bf34ca8b7ed64024ae10,
+    type: 2}
+  hotdogBunMustard: {fileID: 1239610520325382, guid: 4d9ad67c3253a224088bc574e8c4d524,
+    type: 2}
+  hotdogBunKandM: {fileID: 1720944705625996, guid: c59f0d0ca9227f74fb636c4337758c10,
+    type: 2}
+  ketchupBottle: {fileID: 1198879939071202, guid: 1f2f3e1a75ff927448dbb30ebe14e0ba,
+    type: 2}
+  mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
+    type: 2}
 --- !u!4 &1085695088
 Transform:
   m_ObjectHideFlags: 0
@@ -1756,7 +1960,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1085695086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.3, y: 2, z: 4.5}
+  m_LocalPosition: {x: 5.3, y: 1.9909999, z: 4.5}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2095,6 +2299,8 @@ RectTransform:
   - {fileID: 209390619}
   - {fileID: 1496876060}
   - {fileID: 1792168759}
+  - {fileID: 780979964}
+  - {fileID: 627494763}
   m_Father: {fileID: 216947920}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2314,6 +2520,16 @@ MonoBehaviour:
   bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
   hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
     type: 2}
+  hotdogBunKetchup: {fileID: 1582932234769736, guid: a17f49994705bf34ca8b7ed64024ae10,
+    type: 2}
+  hotdogBunMustard: {fileID: 1239610520325382, guid: 4d9ad67c3253a224088bc574e8c4d524,
+    type: 2}
+  hotdogBunKandM: {fileID: 1720944705625996, guid: c59f0d0ca9227f74fb636c4337758c10,
+    type: 2}
+  ketchupBottle: {fileID: 1198879939071202, guid: 1f2f3e1a75ff927448dbb30ebe14e0ba,
+    type: 2}
+  mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
+    type: 2}
 --- !u!4 &1703919886
 Transform:
   m_ObjectHideFlags: 0
@@ -2321,7 +2537,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1703919884}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.6, y: 2, z: 4.5}
+  m_LocalPosition: {x: 7.6, y: 1.9909999, z: 4.5}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2770,6 +2986,16 @@ MonoBehaviour:
   bun: {fileID: 1632255762323490, guid: 6a563e9e572f72740b65d97001383a56, type: 2}
   hotdogWithBun: {fileID: 1037535731163650, guid: 141b9523617dad8418ba6ca3a461ef06,
     type: 2}
+  hotdogBunKetchup: {fileID: 1582932234769736, guid: a17f49994705bf34ca8b7ed64024ae10,
+    type: 2}
+  hotdogBunMustard: {fileID: 1239610520325382, guid: 4d9ad67c3253a224088bc574e8c4d524,
+    type: 2}
+  hotdogBunKandM: {fileID: 1720944705625996, guid: c59f0d0ca9227f74fb636c4337758c10,
+    type: 2}
+  ketchupBottle: {fileID: 1198879939071202, guid: 1f2f3e1a75ff927448dbb30ebe14e0ba,
+    type: 2}
+  mustardBottle: {fileID: 1611844589722258, guid: 30fbb83e3dc9c49439d42c3bc48c8e14,
+    type: 2}
 --- !u!4 &2126305313
 Transform:
   m_ObjectHideFlags: 0
@@ -2777,7 +3003,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2126305311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 2, z: 7.6}
+  m_LocalPosition: {x: 3, y: 1.9909999, z: 7.6}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}

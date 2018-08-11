@@ -22,6 +22,8 @@ public class StateManager : MonoBehaviour {
 	public bool fridgeStored;
 	public bool breadBoxStored;
 	public bool microwaveStored;
+	public bool ketchupStored;
+	public bool mustardStored;
 
 	public Text moneyText;
 
@@ -44,6 +46,12 @@ public class StateManager : MonoBehaviour {
 			case Item.MICROWAVE_OFF:
 				microwaveStored = set;
 				break;
+			case Item.KETCHUP:
+				ketchupStored = set;
+				break;
+			case Item.MUSTARD:
+				mustardStored = set;
+				break;
 			default:
 				Debug.Log("Can't store item");
 				break;
@@ -60,6 +68,10 @@ public class StateManager : MonoBehaviour {
 				return breadBoxStored;
 			case Item.MICROWAVE_OFF:
 				return microwaveStored;
+			case Item.KETCHUP:
+				return ketchupStored;
+			case Item.MUSTARD:
+				return mustardStored;
 			default:
 				Debug.Log("Wrong item type.");
 				return false;
