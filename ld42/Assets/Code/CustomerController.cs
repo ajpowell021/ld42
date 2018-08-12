@@ -16,6 +16,17 @@ public class CustomerController : MonoBehaviour {
 	private Vector3 positionToWalkTo;
 	private Vector3 startingPosition;
 
+	private MeshFilter meshFilter;
+	private MeshRenderer meshRenderer;
+	public Mesh cust1Mesh;
+	public Material cust1Mat;
+	public Mesh cust2Mesh;
+	public Material cust2Mat;
+	public Mesh cust3Mesh;
+	public Material cust3Mat;
+	public Mesh cust4Mesh;
+	public Material cust4Mat;
+
 	// Classes
 
 	private StateManager stateManager;
@@ -28,6 +39,8 @@ public class CustomerController : MonoBehaviour {
 		stateManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<StateManager>();
 		customerManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<CustomerManager>();
 		orderPanelManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<OrderPanelManager>();
+		meshFilter = gameObject.GetComponent<MeshFilter>();
+		meshRenderer = gameObject.GetComponent<MeshRenderer>();
 	}
 
 	private void Start() {
@@ -36,6 +49,7 @@ public class CustomerController : MonoBehaviour {
 		positionToWalkTo = customerManager.getSpawnLocation(idNumber);
 		positionToWalkTo.z = 2.32f;
 		walkUp = true;
+		randomizeModel();
 	}
 
 	// Update
@@ -69,6 +83,32 @@ public class CustomerController : MonoBehaviour {
 	}
 
 	// Functions
+
+	private void randomizeModel() {
+		int roll = Random.Range(0, 4);
+
+		switch (roll) {
+
+
+			case 0:
+				meshFilter.mesh = cust1Mesh;
+				meshRenderer.material = cust1Mat;
+				break;
+			case 1:
+				meshFilter.mesh = cust2Mesh;
+				meshRenderer.material = cust2Mat;
+				break;
+			case 2:
+				meshFilter.mesh = cust3Mesh;
+				meshRenderer.material = cust3Mat;
+				break;
+			case 3:
+				meshFilter.mesh = cust4Mesh;
+				meshRenderer.material = cust4Mat;
+				break;
+
+		}
+	}
 
 	public void setId(int newId) {
 		idNumber = newId;

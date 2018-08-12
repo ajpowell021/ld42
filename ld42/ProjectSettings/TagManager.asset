@@ -20,6 +20,7 @@ TagManager:
   - Sound
   - MoneyText
   - TutorialState
+  - CarKilla
   layers:
   - Default
   - TransparentFX

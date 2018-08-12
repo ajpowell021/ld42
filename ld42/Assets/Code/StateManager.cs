@@ -28,6 +28,8 @@ public class StateManager : MonoBehaviour {
 	public bool mustardStored;
 	public bool relishStored;
 
+	public float carSpeed;
+
 	public GameObject endGamePanel;
 	public bool gameOver;
 

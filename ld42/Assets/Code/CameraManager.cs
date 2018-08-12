@@ -26,7 +26,6 @@ public class CameraManager : MonoBehaviour {
 	private void Update() {
 		if (cam != null) {
 			if (moveCamRight) {
-				Debug.Log("move right?");
 				float distCovered = (Time.time - startTime) * driftSpeed;
 				float fractionJourney = distCovered / 4;
 

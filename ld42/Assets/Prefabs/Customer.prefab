@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300050808504272}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.34, y: 0, z: 2.78}
+  m_LocalPosition: {x: -3.0382957, y: 10.6379595, z: -11.663515}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,3 +97,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idNumber: 1
   itemWanted: 0
+  moneyWhenCompleted: 0
+  timeArrived: 0
+  cust1Mesh: {fileID: 4300000, guid: af74664fce2252d46a0d531afa13fa12, type: 3}
+  cust1Mat: {fileID: 2100000, guid: 1509a0427f72761408dc757a4c96c674, type: 2}
+  cust2Mesh: {fileID: 4300000, guid: fe5a001bcd9853d41a0f34b7d66e40de, type: 3}
+  cust2Mat: {fileID: 2100000, guid: 149e2ca5d2ebcc24e8389b050539fc02, type: 2}
+  cust3Mesh: {fileID: 4300000, guid: 107e0ce07b8eb9e49ada2f80e1522d2a, type: 3}
+  cust3Mat: {fileID: 2100000, guid: f5a5fe18aff9a3942a85f7a1fff32d4e, type: 2}
+  cust4Mesh: {fileID: 4300000, guid: 86e06f783f2dec843aef7265b0a8c7ba, type: 3}
+  cust4Mat: {fileID: 2100000, guid: 9d53ecfc4c35bc6428f167bcec8b5925, type: 2}

@@ -6,6 +6,7 @@
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="CarController.cs" t="Include" />
         <e p="Code" t="Include">
           <e p="CameraManager.cs" t="Include" />
           <e p="CounterContoller.cs" t="Include" />
@@ -28,6 +29,7 @@
           <e p="StateManager.cs" t="Include" />
           <e p="StorageManager.cs" t="Include" />
           <e p="TimerController.cs" t="Include" />
+          <e p="TrafficManager.cs" t="Include" />
           <e p="TutorialManager.cs" t="Include" />
         </e>
         <e p="Plugins" t="Include">

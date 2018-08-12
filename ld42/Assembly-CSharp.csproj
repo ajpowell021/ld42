@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CarController.cs" />
     <Compile Include="Assets\Code\CameraManager.cs" />
     <Compile Include="Assets\Code\CounterContoller.cs" />
     <Compile Include="Assets\Code\CounterManager.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\Code\StateManager.cs" />
     <Compile Include="Assets\Code\StorageManager.cs" />
     <Compile Include="Assets\Code\TimerController.cs" />
+    <Compile Include="Assets\Code\TrafficManager.cs" />
     <Compile Include="Assets\Code\TutorialManager.cs" />
     <Compile Include="Assets\TutorialState.cs" />
     <Reference Include="UnityEditor.StandardEvents">

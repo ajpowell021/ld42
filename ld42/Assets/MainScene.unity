@@ -467,6 +467,7 @@ GameObject:
   - component: {fileID: 146259775}
   - component: {fileID: 146259776}
   - component: {fileID: 146259777}
+  - component: {fileID: 146259778}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Managers
@@ -523,6 +524,7 @@ MonoBehaviour:
   ketchupStored: 1
   mustardStored: 1
   relishStored: 1
+  carSpeed: 10
   endGamePanel: {fileID: 75448365}
   gameOver: 0
   moneyText: {fileID: 328004397}
@@ -652,6 +654,19 @@ MonoBehaviour:
   getBunPanelShown: 0
   condimentsPanelShown: 0
   turnInPanelShown: 0
+--- !u!114 &146259778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146259765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e11084da0f6cd46a17e27350ed0a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redCar: {fileID: 1116759236443626, guid: 28291b32bcd53d840944fd154dc1019d, type: 2}
+  purpleCar: {fileID: 1643172666441872, guid: 1b52566372d613e419665c2a4205eea6, type: 2}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1144,47 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 328004395}
   m_CullTransparentMesh: 0
+--- !u!1 &395071471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 395071473}
+  - component: {fileID: 395071472}
+  m_Layer: 0
+  m_Name: CarKilla (1)
+  m_TagString: CarKilla
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &395071472
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395071471}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.311478, y: 10.884674, z: 35.481632}
+  m_Center: {x: -7.655739, y: 4.942337, z: 17.240816}
+--- !u!4 &395071473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395071471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 96.6, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &416391785
 Prefab:
   m_ObjectHideFlags: 0
@@ -1858,6 +1914,47 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &711173574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 711173576}
+  - component: {fileID: 711173575}
+  m_Layer: 0
+  m_Name: CarKilla
+  m_TagString: CarKilla
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &711173575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 711173574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.311478, y: 10.884674, z: 35.481632}
+  m_Center: {x: -7.655739, y: 4.942337, z: 17.240816}
+--- !u!4 &711173576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 711173574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -54.05, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &760149133
 GameObject:
   m_ObjectHideFlags: 0
