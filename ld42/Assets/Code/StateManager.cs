@@ -11,6 +11,8 @@ public class StateManager : MonoBehaviour {
 
 	public float timeUntilShiftEnds;
 
+	public bool tutorialOn;
+
 	public float customerWalkingSpeed;
 	public PlayerDirection currentPlayerDirection;
 	public PlayerPostion currentPlayerPosition;
@@ -51,6 +53,10 @@ public class StateManager : MonoBehaviour {
 	}
 
 	// Functions
+
+	public void setTutorialOn(bool set) {
+		tutorialOn = set;
+	}
 
 	public void addMoney(int amount) {
 		money += amount;

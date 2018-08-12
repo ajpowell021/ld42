@@ -60,9 +60,11 @@
     <Compile Include="Assets\Code\CustomerController.cs" />
     <Compile Include="Assets\Code\CustomerManager.cs" />
     <Compile Include="Assets\Code\CustomerSpawner.cs" />
+    <Compile Include="Assets\Code\EndGamePanelController.cs" />
     <Compile Include="Assets\Code\Enums.cs" />
     <Compile Include="Assets\Code\InputManager.cs" />
     <Compile Include="Assets\Code\ItemManager.cs" />
+    <Compile Include="Assets\Code\MainMenuButtonController.cs" />
     <Compile Include="Assets\Code\OrderPanelManager.cs" />
     <Compile Include="Assets\Code\PlayerManager.cs" />
     <Compile Include="Assets\Code\QuitButtonController.cs" />
@@ -73,8 +75,7 @@
     <Compile Include="Assets\Code\StateManager.cs" />
     <Compile Include="Assets\Code\StorageManager.cs" />
     <Compile Include="Assets\Code\TimerController.cs" />
-    <Compile Include="Assets\EndGamePanelController.cs" />
-    <Compile Include="Assets\MainMenuButtonController.cs" />
+    <Compile Include="Assets\Code\TutorialManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Chany/Desktop/Workspace/ld42/ld42/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

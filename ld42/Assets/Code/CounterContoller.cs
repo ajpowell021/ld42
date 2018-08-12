@@ -32,6 +32,7 @@ public class CounterContoller : MonoBehaviour {
 	private ItemManager itemManager;
 	private StateManager stateManager;
 	private SoundManager soundManager;
+	private TutorialManager tutorialManager;
 
 	// Init
 
@@ -39,6 +40,7 @@ public class CounterContoller : MonoBehaviour {
 		itemManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<ItemManager>();
 		stateManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<StateManager>();
 		soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
+		tutorialManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<TutorialManager>();
 	}
 
 	// Public Functions

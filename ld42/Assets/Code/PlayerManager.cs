@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour {
 	private StorageManager storageManager;
 	private SelectorController selectorController;
 	private SoundManager soundManager;
+	private TutorialManager tutorialManager;
 
 	// GameObjects
 
@@ -27,6 +28,7 @@ public class PlayerManager : MonoBehaviour {
 		cameraManager = gameObject.GetComponent<CameraManager>();
 		storageManager = gameObject.GetComponent<StorageManager>();
 		soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
+		tutorialManager = gameObject.GetComponent<TutorialManager>();
 		chef = GameObject.FindGameObjectWithTag("Chef");
 		selectorController = GameObject.FindGameObjectWithTag("Selector").GetComponent<SelectorController>();
 	}
@@ -217,10 +219,20 @@ public class PlayerManager : MonoBehaviour {
 			case Item.FRIDGE:
 				// Get hotdog from fridge.
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.DOG);
+				if (!tutorialManager.cookDogPanelShown && stateManager.tutorialOn) {
+					tutorialManager.setPanel(0, false);
+					tutorialManager.setPanel(1, true);
+					tutorialManager.cookDogPanelShown = true;
+				}
 				break;
 			case Item.BREADBOX:
 				// Get bun from breadbox.
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.BUN);
+				if (tutorialManager.getBunPanelShown && !tutorialManager.condimentsPanelShown && stateManager.tutorialOn) {
+					tutorialManager.setPanel(2, false);
+					tutorialManager.setPanel(3, true);
+					tutorialManager.condimentsPanelShown = true;
+				}
 				break;
 			case Item.RELISH_JAR:
 				// Pickup relish.
@@ -253,6 +265,11 @@ public class PlayerManager : MonoBehaviour {
 					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.MICROWAVE_COOKING);
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+					if (!tutorialManager.getBunPanelShown && stateManager.tutorialOn && tutorialManager.cookDogPanelShown) {
+						tutorialManager.setPanel(1, false);
+						tutorialManager.setPanel(2, true);
+						tutorialManager.getBunPanelShown = true;
+					}
 				}
 				break;
 			case Item.FRIDGE:
@@ -276,6 +293,11 @@ public class PlayerManager : MonoBehaviour {
 					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.HOTDOG_WITH_BUN);
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+					if (tutorialManager.condimentsPanelShown && !tutorialManager.turnInPanelShown && stateManager.tutorialOn) {
+						tutorialManager.setPanel(3, false);
+						tutorialManager.setPanel(4, true);
+						tutorialManager.turnInPanelShown = true;
+					}
 				}
 				break;
 			case Item.COOKED_DOG:
@@ -285,6 +307,11 @@ public class PlayerManager : MonoBehaviour {
 					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.HOTDOG_WITH_BUN);
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+					if (tutorialManager.condimentsPanelShown && !tutorialManager.turnInPanelShown && stateManager.tutorialOn) {
+						tutorialManager.setPanel(3, false);
+						tutorialManager.setPanel(4, true);
+						tutorialManager.turnInPanelShown = true;
+					}
 				}
 				break;
 			case Item.KETCHUP:
