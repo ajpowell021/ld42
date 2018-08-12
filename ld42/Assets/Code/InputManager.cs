@@ -71,7 +71,7 @@ public class InputManager : MonoBehaviour {
     }
 
     private void checkPickUpInputs() {
-        if (Input.GetKeyDown(KeyCode.Z)) {
+        if (Input.GetKeyDown(KeyCode.Z) && stateManager.chefCounterPosition != CounterPosition.STORAGE) {
             playerManager.pickUp();
         }
     }

@@ -30,42 +30,42 @@ public class StorageManager : MonoBehaviour {
 
 	private void initTextColors() {
 		if (stateManager.fridgeStored) {
-			fridgeText.color = Color.black;
+			fridgeText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 		else {
 			fridgeText.color = Color.gray;
 		}
 
 		if (stateManager.fridgeStored) {
-			breadBoxText.color = Color.black;
+			breadBoxText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 		else {
 			breadBoxText.color = Color.gray;
 		}
 
 		if (stateManager.microwaveStored) {
-			microWaveText.color = Color.black;
+			microWaveText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 		else {
 			microWaveText.color = Color.gray;
 		}
 
 		if (stateManager.ketchupStored) {
-			ketchupText.color = Color.black;
+			ketchupText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 		else {
 			ketchupText.color = Color.gray;
 		}
 
 		if (stateManager.mustardStored) {
-			mustardText.color = Color.black;
+			mustardText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 		else {
 			mustardText.color = Color.gray;
 		}
 
 		if (stateManager.relishStored) {
-			relishText.color = Color.black;
+			relishText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 		else {
 			relishText.color = Color.gray;
@@ -108,7 +108,7 @@ public class StorageManager : MonoBehaviour {
 		}
 		else {
 			stateManager.setStored(Item.FRIDGE, true);
-			fridgeText.color = Color.black;
+			fridgeText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 	}
 
@@ -119,7 +119,7 @@ public class StorageManager : MonoBehaviour {
 		}
 		else {
 			stateManager.setStored(Item.BREADBOX, true);
-			breadBoxText.color = Color.black;
+			breadBoxText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 	}
 
@@ -130,7 +130,7 @@ public class StorageManager : MonoBehaviour {
 		}
 		else {
 			stateManager.setStored(Item.MICROWAVE_OFF, true);
-			microWaveText.color = Color.black;
+			microWaveText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 	}
 
@@ -141,7 +141,7 @@ public class StorageManager : MonoBehaviour {
 		}
 		else {
 			stateManager.setStored(Item.KETCHUP, true);
-			ketchupText.color = Color.black;
+			ketchupText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 	}
 
@@ -152,7 +152,7 @@ public class StorageManager : MonoBehaviour {
 		}
 		else {
 			stateManager.setStored(Item.MUSTARD, true);
-			mustardText.color = Color.black;
+			mustardText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 	}
 	public void toggleRelishText() {
@@ -162,7 +162,7 @@ public class StorageManager : MonoBehaviour {
 		}
 		else {
 			stateManager.setStored(Item.RELISH_JAR, true);
-			relishText.color = Color.black;
+			relishText.color = new Color(0.1566f, 0.9150f, 0.0992f, 1);
 		}
 	}
 
