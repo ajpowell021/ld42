@@ -31,11 +31,13 @@ public class InputManager : MonoBehaviour {
     // Update
 
     private void Update() {
-        checkMovementInputs();
-        checkUseInputs();
-        checkPickUpInputs();
-        checkSelectorInputs();
-        checkRecipeTurnIn();
+        if (stateManager.gameOver == false) {
+            checkMovementInputs();
+            checkUseInputs();
+            checkPickUpInputs();
+            checkSelectorInputs();
+            checkRecipeTurnIn();
+        }
     }
 
     // Functions
@@ -90,7 +92,7 @@ public class InputManager : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.Alpha1)) {
                     bool success = customerManager.checkIfRecipeMatchesHeldItem(1);
                     if (success) {
-                        stateManager.addMoney(5);
+                        stateManager.addMoney(customerManager.getMoneyFromCustomer(1));
                         customerManager.removeCustomer(1);
                         counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
                         itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
@@ -108,7 +110,7 @@ public class InputManager : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.Alpha2)) {
                     bool success = customerManager.checkIfRecipeMatchesHeldItem(2);
                     if (success) {
-                        stateManager.addMoney(5);
+                        stateManager.addMoney(customerManager.getMoneyFromCustomer(2));
                         customerManager.removeCustomer(2);
                         counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
                         itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
@@ -125,7 +127,7 @@ public class InputManager : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.Alpha3)) {
                     bool success = customerManager.checkIfRecipeMatchesHeldItem(3);
                     if (success) {
-                        stateManager.addMoney(5);
+                        stateManager.addMoney(customerManager.getMoneyFromCustomer(3));
                         customerManager.removeCustomer(3);
                         counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
                         itemManager.deleteAllItemsInPosition(CounterPosition.HAT);

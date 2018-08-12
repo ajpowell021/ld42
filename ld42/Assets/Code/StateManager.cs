@@ -28,7 +28,16 @@ public class StateManager : MonoBehaviour {
 	public bool mustardStored;
 	public bool relishStored;
 
+	public GameObject endGamePanel;
+	public bool gameOver;
+
 	public Text moneyText;
+
+	// Init
+
+	private void Awake() {
+		gameOver = false;
+	}
 
 	// Update
 
@@ -36,7 +45,8 @@ public class StateManager : MonoBehaviour {
 		timeUntilShiftEnds -= Time.deltaTime;
 
 		if (timeUntilShiftEnds <= 0) {
-			// End Game!!!
+			endGamePanel.SetActive(true);
+			gameOver = true;
 		}
 	}
 

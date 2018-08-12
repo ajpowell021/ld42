@@ -8,6 +8,8 @@ public class CustomerController : MonoBehaviour {
 
 	public int idNumber;
 	public Item itemWanted;
+	public int moneyWhenCompleted;
+	public float timeArrived;
 	private bool walkAway;
 	private bool walkUp;
 	private float startTime;
@@ -102,6 +104,9 @@ public class CustomerController : MonoBehaviour {
 				itemWanted = Item.HOTDOG_RELISH_KETCHUP;
 				break;
 		}
+
+		moneyWhenCompleted = 10;
+		timeArrived = Time.time;
 	}
 
 	public void customerLeaves() {

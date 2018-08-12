@@ -65,14 +65,16 @@
     <Compile Include="Assets\Code\ItemManager.cs" />
     <Compile Include="Assets\Code\OrderPanelManager.cs" />
     <Compile Include="Assets\Code\PlayerManager.cs" />
+    <Compile Include="Assets\Code\QuitButtonController.cs" />
     <Compile Include="Assets\Code\SelectorController.cs" />
     <Compile Include="Assets\Code\SoundManager.cs" />
+    <Compile Include="Assets\Code\SpinningChef.cs" />
+    <Compile Include="Assets\Code\StartButtonController.cs" />
     <Compile Include="Assets\Code\StateManager.cs" />
     <Compile Include="Assets\Code\StorageManager.cs" />
     <Compile Include="Assets\Code\TimerController.cs" />
-    <Compile Include="Assets\QuitButtonController.cs" />
-    <Compile Include="Assets\SpinningChef.cs" />
-    <Compile Include="Assets\StartButtonController.cs" />
+    <Compile Include="Assets\EndGamePanelController.cs" />
+    <Compile Include="Assets\MainMenuButtonController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Chany/Desktop/Workspace/ld42/ld42/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

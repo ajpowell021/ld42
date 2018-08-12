@@ -18,12 +18,17 @@
           <e p="ItemManager.cs" t="Include" />
           <e p="OrderPanelManager.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
+          <e p="QuitButtonController.cs" t="Include" />
           <e p="SelectorController.cs" t="Include" />
           <e p="SoundManager.cs" t="Include" />
+          <e p="SpinningChef.cs" t="Include" />
+          <e p="StartButtonController.cs" t="Include" />
           <e p="StateManager.cs" t="Include" />
           <e p="StorageManager.cs" t="Include" />
           <e p="TimerController.cs" t="Include" />
         </e>
+        <e p="EndGamePanelController.cs" t="Include" />
+        <e p="MainMenuButtonController.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
             <e p="JetBrains" t="Include">
@@ -31,9 +36,6 @@
             </e>
           </e>
         </e>
-        <e p="QuitButtonController.cs" t="Include" />
-        <e p="SpinningChef.cs" t="Include" />
-        <e p="StartButtonController.cs" t="Include" />
       </e>
       <e p="ld42.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

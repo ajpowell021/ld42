@@ -17,6 +17,26 @@ public class CustomerManager : MonoBehaviour {
 
 	// Functions
 
+	public int getMoneyFromCustomer(int idNumber) {
+		GameObject customer = getSpecificCustomer(idNumber);
+		CustomerController controller = customer.GetComponent<CustomerController>();
+		int money = controller.moneyWhenCompleted;
+		float timeStarted = controller.timeArrived;
+
+		if (timeStarted > Time.time - 16) {
+			return money;
+		}
+		else if (timeStarted > Time.time - 20) {
+			return money - 2;
+		}
+		else if (timeStarted > Time.time - 25) {
+			return money - 5;
+		}
+		else {
+			return money - 7;
+		}
+	}
+
 	public Vector3 getSpawnLocation(int idNumber) {
 		switch (idNumber) {
 
