@@ -416,9 +416,11 @@ public class PlayerManager : MonoBehaviour {
 					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
 					break;
 				case Item.MICROWAVE_OFF:
-					storageManager.toggleMicrowaveText();
-					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
-					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					if (!stateManager.microwaveStored) {
+						storageManager.toggleMicrowaveText();
+						counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+						itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					}
 					break;
 				case Item.KETCHUP:
 					storageManager.toggleKetchupText();
@@ -436,7 +438,8 @@ public class PlayerManager : MonoBehaviour {
 					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
 					break;
 				default:
-					Debug.Log("held item not handled.");
+					itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
 					break;
 			}
 		}

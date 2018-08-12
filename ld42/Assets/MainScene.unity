@@ -3722,6 +3722,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2111772833
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4163599012959166, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.086
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163599012959166, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.931
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163599012959166, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 7.714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163599012959166, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163599012959166, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163599012959166, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163599012959166, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163599012959166, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947791625988648, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+      propertyPath: m_TagString
+      value: BackLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947791625988648, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+      propertyPath: m_Name
+      value: off_micro (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &2126305311
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,7 +3800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCounterPosition: 0
-  currentItemHeld: 3
+  currentItemHeld: 4
   hotdog: {fileID: 1466765395700294, guid: cd9177dc15a33214ea266362c53caaae, type: 2}
   offMicro: {fileID: 1947791625988648, guid: 09d85531f85cf1249acc3b73eecc5a04, type: 2}
   onMicro: {fileID: 1740107890660694, guid: 3c2d67ac27c5fd24eabdb78f88996bcc, type: 2}

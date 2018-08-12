@@ -37,6 +37,7 @@ public class InputManager : MonoBehaviour {
             checkPickUpInputs();
             checkSelectorInputs();
             checkRecipeTurnIn();
+            checkDeleteButton();
         }
     }
 
@@ -145,6 +146,15 @@ public class InputManager : MonoBehaviour {
         }
     }
 
+    private void checkDeleteButton() {
+        if (Input.GetKeyDown(KeyCode.X)) {
+            if (holdingGarbageItem()) {
+                itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
+                counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
+            }
+        }
+    }
+
     private bool holdingForbiddenItem() {
         // Things that cannot be eaten.
 
@@ -156,6 +166,20 @@ public class InputManager : MonoBehaviour {
         }
         else {
             return false;
+        }
+    }
+
+    private bool holdingGarbageItem() {
+        // Things that cannot be eaten.
+
+        Item item = stateManager.currentHatItem;
+
+        if (item == Item.BREADBOX || item == Item.MICROWAVE_OFF || item == Item.FRIDGE
+            || item == Item.KETCHUP || item == Item.MUSTARD || item == Item.RELISH_JAR) {
+            return false;
+        }
+        else {
+            return true;
         }
     }
 }
