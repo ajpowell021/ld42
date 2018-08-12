@@ -29,9 +29,11 @@ public class StateManager : MonoBehaviour {
 	public bool relishStored;
 
 	public float carSpeed;
+	public float peopleSpeed;
 
 	public GameObject endGamePanel;
 	public bool gameOver;
+	public GameObject moneyPanel;
 
 	public Text moneyText;
 
@@ -55,6 +57,7 @@ public class StateManager : MonoBehaviour {
 			cameraManager.hidePanel();
 			endGamePanel.SetActive(true);
 			gameOver = true;
+			moneyPanel.SetActive(false);
 			timeUntilShiftEnds = 0;
 		}
 	}

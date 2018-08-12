@@ -32,6 +32,8 @@
           <e p="TrafficManager.cs" t="Include" />
           <e p="TutorialManager.cs" t="Include" />
         </e>
+        <e p="FootTrafficController.cs" t="Include" />
+        <e p="FootTrafficManager.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
             <e p="JetBrains" t="Include">

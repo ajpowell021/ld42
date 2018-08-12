@@ -19,6 +19,7 @@ public class TutorialManager : MonoBehaviour {
 	public GameObject condimentsPanel;
 	public GameObject turnInPanel;
 	public GameObject finalPanel;
+	public GameObject extraTipsPanel;
 
 	public bool getDogPanelShown;
 	public bool cookDogPanelShown;
@@ -68,6 +69,9 @@ public class TutorialManager : MonoBehaviour {
 					StartCoroutine(deletePanel());
 				}
 				break;
+			case 6:
+				extraTipsPanel.SetActive(set);
+				break;
 			default:
 				Debug.Log("wrong position for tutorial");
 				break;
@@ -77,6 +81,9 @@ public class TutorialManager : MonoBehaviour {
 	private IEnumerator deletePanel() {
 		yield return new WaitForSeconds(3);
 		setPanel(5, false);
+		setPanel(6, true);
+		yield return new WaitForSeconds(5);
+		setPanel(6, false);
 		tutorialState.tutorialOn = false;
 	}
 }

@@ -425,6 +425,7 @@ public class PlayerManager : MonoBehaviour {
 				// Get item from storage.
 				storageManager.toggleItemText(itemToGet);
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, itemToGet);
+				moveLeft();
 			}
 			else {
 				Debug.Log("Item is already out");

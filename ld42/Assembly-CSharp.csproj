@@ -78,6 +78,8 @@
     <Compile Include="Assets\Code\TimerController.cs" />
     <Compile Include="Assets\Code\TrafficManager.cs" />
     <Compile Include="Assets\Code\TutorialManager.cs" />
+    <Compile Include="Assets\FootTrafficController.cs" />
+    <Compile Include="Assets\FootTrafficManager.cs" />
     <Compile Include="Assets\TutorialState.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Chany/Desktop/Workspace/ld42/ld42/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
