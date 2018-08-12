@@ -567,6 +567,10 @@ MonoBehaviour:
     type: 2}
   relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
   relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
+  relishMustardDog: {fileID: 1230034862050534, guid: ead22697417e2324e94c5313b188e196,
+    type: 2}
+  relishKetchupDog: {fileID: 1669914923296160, guid: 62848519635990b41a14207af27db594,
+    type: 2}
 --- !u!1 &209390618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,6 +1397,10 @@ MonoBehaviour:
     type: 2}
   relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
   relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
+  relishMustardDog: {fileID: 1230034862050534, guid: ead22697417e2324e94c5313b188e196,
+    type: 2}
+  relishKetchupDog: {fileID: 1669914923296160, guid: 62848519635990b41a14207af27db594,
+    type: 2}
 --- !u!4 &760149135
 Transform:
   m_ObjectHideFlags: 0
@@ -1707,6 +1715,10 @@ MonoBehaviour:
     type: 2}
   relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
   relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
+  relishMustardDog: {fileID: 1230034862050534, guid: ead22697417e2324e94c5313b188e196,
+    type: 2}
+  relishKetchupDog: {fileID: 1669914923296160, guid: 62848519635990b41a14207af27db594,
+    type: 2}
 --- !u!4 &919786748
 Transform:
   m_ObjectHideFlags: 0
@@ -1975,6 +1987,10 @@ MonoBehaviour:
     type: 2}
   relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
   relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
+  relishMustardDog: {fileID: 1230034862050534, guid: ead22697417e2324e94c5313b188e196,
+    type: 2}
+  relishKetchupDog: {fileID: 1669914923296160, guid: 62848519635990b41a14207af27db594,
+    type: 2}
 --- !u!4 &1046744970
 Transform:
   m_ObjectHideFlags: 0
@@ -2040,6 +2056,10 @@ MonoBehaviour:
     type: 2}
   relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
   relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
+  relishMustardDog: {fileID: 1230034862050534, guid: ead22697417e2324e94c5313b188e196,
+    type: 2}
+  relishKetchupDog: {fileID: 1669914923296160, guid: 62848519635990b41a14207af27db594,
+    type: 2}
 --- !u!4 &1085695088
 Transform:
   m_ObjectHideFlags: 0
@@ -2620,6 +2640,10 @@ MonoBehaviour:
     type: 2}
   relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
   relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
+  relishMustardDog: {fileID: 1230034862050534, guid: ead22697417e2324e94c5313b188e196,
+    type: 2}
+  relishKetchupDog: {fileID: 1669914923296160, guid: 62848519635990b41a14207af27db594,
+    type: 2}
 --- !u!4 &1703919886
 Transform:
   m_ObjectHideFlags: 0
@@ -3088,6 +3112,10 @@ MonoBehaviour:
     type: 2}
   relish: {fileID: 1004087985655562, guid: 6f01f7ed25b6a144e9a3b1ac81da3c1d, type: 2}
   relishDog: {fileID: 1645019124271380, guid: 3529254d38f7fb64db10be9cee7d3bd4, type: 2}
+  relishMustardDog: {fileID: 1230034862050534, guid: ead22697417e2324e94c5313b188e196,
+    type: 2}
+  relishKetchupDog: {fileID: 1669914923296160, guid: 62848519635990b41a14207af27db594,
+    type: 2}
 --- !u!4 &2126305313
 Transform:
   m_ObjectHideFlags: 0

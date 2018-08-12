@@ -24,6 +24,8 @@ public class CounterContoller : MonoBehaviour {
 	public GameObject mustardBottle;
 	public GameObject relish;
 	public GameObject relishDog;
+	public GameObject relishMustardDog;
+	public GameObject relishKetchupDog;
 
 	// Classes
 
@@ -100,6 +102,12 @@ public class CounterContoller : MonoBehaviour {
 				break;
 			case Item.HOTDOG_RELISH:
 				newItem = Instantiate(relishDog, transform.position, Quaternion.EulerAngles(0, 180, 0));
+				break;
+			case Item.HOTDOG_RELISH_MUSTARD:
+				newItem = Instantiate(relishMustardDog, transform.position, Quaternion.EulerAngles(0, 180, 0));
+				break;
+			case Item.HOTDOG_RELISH_KETCHUP:
+				newItem = Instantiate(relishKetchupDog, transform.position, Quaternion.EulerAngles(0, 180, 0));
 				break;
 			case Item.NONE:
 				// Do nothing

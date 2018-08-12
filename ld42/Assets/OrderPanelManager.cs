@@ -42,6 +42,12 @@ public class OrderPanelManager : MonoBehaviour {
 			case Item.HOTDOG_RELISH:
 				orderText = "Hotdog with relish";
 				break;
+			case Item.HOTDOG_RELISH_MUSTARD:
+				orderText = "Hotdog with relish and mustard";
+				break;
+			case Item.HOTDOG_RELISH_KETCHUP:
+				orderText = "Hotdog with relish and ketchup";
+				break;
 			default:
 				Debug.Log("Wrong item type.");
 				orderText = "error";
