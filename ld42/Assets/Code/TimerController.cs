@@ -18,6 +18,6 @@ public class TimerController : MonoBehaviour {
 
     // Update
     private void Update() {
-        timerText.text = "Shift Ends In:" +  " 0:" + Mathf.Ceil(stateManager.timeUntilShiftEnds);
+        timerText.text = "Shift Ends In: " + Mathf.Ceil(stateManager.timeUntilShiftEnds);
     }
 }
