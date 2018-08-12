@@ -54,21 +54,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraManager.cs" />
-    <Compile Include="Assets\CounterContoller.cs" />
-    <Compile Include="Assets\CounterManager.cs" />
-    <Compile Include="Assets\CustomerController.cs" />
-    <Compile Include="Assets\CustomerManager.cs" />
-    <Compile Include="Assets\CustomerSpawner.cs" />
-    <Compile Include="Assets\Enums.cs" />
-    <Compile Include="Assets\InputManager.cs" />
-    <Compile Include="Assets\ItemManager.cs" />
-    <Compile Include="Assets\OrderPanelManager.cs" />
-    <Compile Include="Assets\PlayerManager.cs" />
-    <Compile Include="Assets\SelectorController.cs" />
-    <Compile Include="Assets\SoundManager.cs" />
-    <Compile Include="Assets\StateManager.cs" />
-    <Compile Include="Assets\StorageManager.cs" />
+    <Compile Include="Assets\Code\CameraManager.cs" />
+    <Compile Include="Assets\Code\CounterContoller.cs" />
+    <Compile Include="Assets\Code\CounterManager.cs" />
+    <Compile Include="Assets\Code\CustomerController.cs" />
+    <Compile Include="Assets\Code\CustomerManager.cs" />
+    <Compile Include="Assets\Code\CustomerSpawner.cs" />
+    <Compile Include="Assets\Code\Enums.cs" />
+    <Compile Include="Assets\Code\InputManager.cs" />
+    <Compile Include="Assets\Code\ItemManager.cs" />
+    <Compile Include="Assets\Code\OrderPanelManager.cs" />
+    <Compile Include="Assets\Code\PlayerManager.cs" />
+    <Compile Include="Assets\Code\SelectorController.cs" />
+    <Compile Include="Assets\Code\SoundManager.cs" />
+    <Compile Include="Assets\Code\StateManager.cs" />
+    <Compile Include="Assets\Code\StorageManager.cs" />
+    <Compile Include="Assets\Code\TimerController.cs" />
+    <Compile Include="Assets\QuitButtonController.cs" />
+    <Compile Include="Assets\SpinningChef.cs" />
+    <Compile Include="Assets\StartButtonController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Chany/Desktop/Workspace/ld42/ld42/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

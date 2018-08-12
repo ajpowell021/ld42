@@ -6,17 +6,24 @@
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="CameraManager.cs" t="Include" />
-        <e p="CounterContoller.cs" t="Include" />
-        <e p="CounterManager.cs" t="Include" />
-        <e p="CustomerController.cs" t="Include" />
-        <e p="CustomerManager.cs" t="Include" />
-        <e p="CustomerSpawner.cs" t="Include" />
-        <e p="Enums.cs" t="Include" />
-        <e p="InputManager.cs" t="Include" />
-        <e p="ItemManager.cs" t="Include" />
-        <e p="OrderPanelManager.cs" t="Include" />
-        <e p="PlayerManager.cs" t="Include" />
+        <e p="Code" t="Include">
+          <e p="CameraManager.cs" t="Include" />
+          <e p="CounterContoller.cs" t="Include" />
+          <e p="CounterManager.cs" t="Include" />
+          <e p="CustomerController.cs" t="Include" />
+          <e p="CustomerManager.cs" t="Include" />
+          <e p="CustomerSpawner.cs" t="Include" />
+          <e p="Enums.cs" t="Include" />
+          <e p="InputManager.cs" t="Include" />
+          <e p="ItemManager.cs" t="Include" />
+          <e p="OrderPanelManager.cs" t="Include" />
+          <e p="PlayerManager.cs" t="Include" />
+          <e p="SelectorController.cs" t="Include" />
+          <e p="SoundManager.cs" t="Include" />
+          <e p="StateManager.cs" t="Include" />
+          <e p="StorageManager.cs" t="Include" />
+          <e p="TimerController.cs" t="Include" />
+        </e>
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
             <e p="JetBrains" t="Include">
@@ -24,10 +31,9 @@
             </e>
           </e>
         </e>
-        <e p="SelectorController.cs" t="Include" />
-        <e p="SoundManager.cs" t="Include" />
-        <e p="StateManager.cs" t="Include" />
-        <e p="StorageManager.cs" t="Include" />
+        <e p="QuitButtonController.cs" t="Include" />
+        <e p="SpinningChef.cs" t="Include" />
+        <e p="StartButtonController.cs" t="Include" />
       </e>
       <e p="ld42.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
