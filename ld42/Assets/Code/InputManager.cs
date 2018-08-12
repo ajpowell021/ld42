@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour {
     private ItemManager itemManager;
     private SoundManager soundManager;
     private TutorialManager tutorialManager;
+    private TutorialState tutorialState;
 
     // Init
 
@@ -25,6 +26,7 @@ public class InputManager : MonoBehaviour {
         storageManager = gameObject.GetComponent<StorageManager>();
         customerManager = gameObject.GetComponent<CustomerManager>();
         tutorialManager = gameObject.GetComponent<TutorialManager>();
+        tutorialState = GameObject.FindGameObjectWithTag("TutorialState").GetComponent<TutorialState>();
         itemManager = gameObject.GetComponent<ItemManager>();
         soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
         selectorController = GameObject.FindGameObjectWithTag("Selector").GetComponent<SelectorController>();
@@ -83,7 +85,7 @@ public class InputManager : MonoBehaviour {
                 selectorController.adjustPosition(1);
             }
 
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z)) {
                playerManager.playerStorageAction();
             }
         }
@@ -100,7 +102,7 @@ public class InputManager : MonoBehaviour {
                         counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
                         itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
                         soundManager.playMoneySound();
-                        if (stateManager.tutorialOn && tutorialManager.turnInPanelShown) {
+                        if (tutorialState.tutorialOn && tutorialManager.turnInPanelShown) {
                             tutorialManager.setPanel(4, false);
                             tutorialManager.setPanel(5, true);
                         }
@@ -111,7 +113,7 @@ public class InputManager : MonoBehaviour {
                         counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
                         itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
                         soundManager.playErrorSound();
-                        if (stateManager.tutorialOn && tutorialManager.turnInPanelShown) {
+                        if (tutorialState.tutorialOn && tutorialManager.turnInPanelShown) {
                             tutorialManager.setPanel(4, false);
                             tutorialManager.setPanel(5, true);
                         }
@@ -126,7 +128,7 @@ public class InputManager : MonoBehaviour {
                         counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
                         itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
                         soundManager.playMoneySound();
-                        if (stateManager.tutorialOn && tutorialManager.turnInPanelShown) {
+                        if (tutorialState.tutorialOn && tutorialManager.turnInPanelShown) {
                             tutorialManager.setPanel(4, false);
                             tutorialManager.setPanel(5, true);
                         }
@@ -137,7 +139,7 @@ public class InputManager : MonoBehaviour {
                         counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
                         itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
                         soundManager.playErrorSound();
-                        if (stateManager.tutorialOn && tutorialManager.turnInPanelShown) {
+                        if (tutorialState.tutorialOn && tutorialManager.turnInPanelShown) {
                             tutorialManager.setPanel(4, false);
                             tutorialManager.setPanel(5, true);
                         }
@@ -151,7 +153,7 @@ public class InputManager : MonoBehaviour {
                         counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
                         itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
                         soundManager.playMoneySound();
-                        if (stateManager.tutorialOn && tutorialManager.turnInPanelShown) {
+                        if (tutorialState.tutorialOn && tutorialManager.turnInPanelShown) {
                             tutorialManager.setPanel(4, false);
                             tutorialManager.setPanel(5, true);
                         }
@@ -162,7 +164,7 @@ public class InputManager : MonoBehaviour {
                         counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
                         itemManager.deleteAllItemsInPosition(CounterPosition.HAT);
                         soundManager.playErrorSound();
-                        if (stateManager.tutorialOn && tutorialManager.turnInPanelShown) {
+                        if (tutorialState.tutorialOn && tutorialManager.turnInPanelShown) {
                             tutorialManager.setPanel(4, false);
                             tutorialManager.setPanel(5, true);
                         }

@@ -19,6 +19,7 @@ TagManager:
   - Customer
   - Sound
   - MoneyText
+  - TutorialState
   layers:
   - Default
   - TransparentFX

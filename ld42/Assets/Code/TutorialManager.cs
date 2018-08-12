@@ -26,10 +26,20 @@ public class TutorialManager : MonoBehaviour {
 	public bool condimentsPanelShown;
 	public bool turnInPanelShown;
 
+	private StateManager stateManager;
+	private TutorialState tutorialState;
+
 	// Init
 
+	private void Awake() {
+		stateManager = gameObject.GetComponent<StateManager>();
+		tutorialState = GameObject.FindGameObjectWithTag("TutorialState").GetComponent<TutorialState>();
+	}
+
 	private void Start() {
-		setPanel(0, true);
+		if (tutorialState.tutorialOn) {
+			setPanel(0, true);
+		}
 	}
 	
 	// Public
@@ -67,5 +77,6 @@ public class TutorialManager : MonoBehaviour {
 	private IEnumerator deletePanel() {
 		yield return new WaitForSeconds(3);
 		setPanel(5, false);
+		tutorialState.tutorialOn = false;
 	}
 }

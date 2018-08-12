@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour {
 	private SelectorController selectorController;
 	private SoundManager soundManager;
 	private TutorialManager tutorialManager;
+	private TutorialState tutorialState;
 
 	// GameObjects
 
@@ -29,6 +30,7 @@ public class PlayerManager : MonoBehaviour {
 		storageManager = gameObject.GetComponent<StorageManager>();
 		soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
 		tutorialManager = gameObject.GetComponent<TutorialManager>();
+		tutorialState = GameObject.FindGameObjectWithTag("TutorialState").GetComponent<TutorialState>();
 		chef = GameObject.FindGameObjectWithTag("Chef");
 		selectorController = GameObject.FindGameObjectWithTag("Selector").GetComponent<SelectorController>();
 	}
@@ -219,7 +221,7 @@ public class PlayerManager : MonoBehaviour {
 			case Item.FRIDGE:
 				// Get hotdog from fridge.
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.DOG);
-				if (!tutorialManager.cookDogPanelShown && stateManager.tutorialOn) {
+				if (!tutorialManager.cookDogPanelShown && tutorialState.tutorialOn) {
 					tutorialManager.setPanel(0, false);
 					tutorialManager.setPanel(1, true);
 					tutorialManager.cookDogPanelShown = true;
@@ -228,7 +230,7 @@ public class PlayerManager : MonoBehaviour {
 			case Item.BREADBOX:
 				// Get bun from breadbox.
 				counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.BUN);
-				if (tutorialManager.getBunPanelShown && !tutorialManager.condimentsPanelShown && stateManager.tutorialOn) {
+				if (tutorialManager.getBunPanelShown && !tutorialManager.condimentsPanelShown && tutorialState.tutorialOn) {
 					tutorialManager.setPanel(2, false);
 					tutorialManager.setPanel(3, true);
 					tutorialManager.condimentsPanelShown = true;
@@ -251,7 +253,8 @@ public class PlayerManager : MonoBehaviour {
 
 	private void setDownItemPlayerAction(Item counterItem) {
 		// Player has something in hat.
-		switch (counterItem) {
+		if (stateManager.chefCounterPosition != CounterPosition.STORAGE) {
+			switch (counterItem) {
 
 			case Item.NONE:
 				counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, stateManager.currentHatItem);
@@ -265,7 +268,7 @@ public class PlayerManager : MonoBehaviour {
 					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.MICROWAVE_COOKING);
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
-					if (!tutorialManager.getBunPanelShown && stateManager.tutorialOn && tutorialManager.cookDogPanelShown) {
+					if (!tutorialManager.getBunPanelShown && tutorialState.tutorialOn && tutorialManager.cookDogPanelShown) {
 						tutorialManager.setPanel(1, false);
 						tutorialManager.setPanel(2, true);
 						tutorialManager.getBunPanelShown = true;
@@ -293,7 +296,7 @@ public class PlayerManager : MonoBehaviour {
 					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.HOTDOG_WITH_BUN);
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
-					if (tutorialManager.condimentsPanelShown && !tutorialManager.turnInPanelShown && stateManager.tutorialOn) {
+					if (tutorialManager.condimentsPanelShown && !tutorialManager.turnInPanelShown && tutorialState.tutorialOn) {
 						tutorialManager.setPanel(3, false);
 						tutorialManager.setPanel(4, true);
 						tutorialManager.turnInPanelShown = true;
@@ -307,7 +310,7 @@ public class PlayerManager : MonoBehaviour {
 					itemManager.deleteAllItemsInPosition(stateManager.chefCounterPosition);
 					counterManager.setItemHeldOnCounter(stateManager.chefCounterPosition, Item.HOTDOG_WITH_BUN);
 					counterManager.setItemHeldOnCounter(CounterPosition.HAT, Item.NONE);
-					if (tutorialManager.condimentsPanelShown && !tutorialManager.turnInPanelShown && stateManager.tutorialOn) {
+					if (tutorialManager.condimentsPanelShown && !tutorialManager.turnInPanelShown && tutorialState.tutorialOn) {
 						tutorialManager.setPanel(3, false);
 						tutorialManager.setPanel(4, true);
 						tutorialManager.turnInPanelShown = true;
@@ -404,6 +407,7 @@ public class PlayerManager : MonoBehaviour {
 			default:
 				Debug.Log("Wrong item set down");
 				break;
+		}
 		}
 	}
 

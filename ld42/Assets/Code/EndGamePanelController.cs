@@ -8,6 +8,7 @@ public class EndGamePanelController : MonoBehaviour {
     private StateManager stateManager;
 
     private void OnEnable() {
+
         stateManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<StateManager>();
 
         Text moneyText = GameObject.FindGameObjectWithTag("MoneyText").GetComponent<Text>();

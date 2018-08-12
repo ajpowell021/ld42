@@ -11,8 +11,6 @@ public class StateManager : MonoBehaviour {
 
 	public float timeUntilShiftEnds;
 
-	public bool tutorialOn;
-
 	public float customerWalkingSpeed;
 	public PlayerDirection currentPlayerDirection;
 	public PlayerPostion currentPlayerPosition;
@@ -35,28 +33,31 @@ public class StateManager : MonoBehaviour {
 
 	public Text moneyText;
 
+	private CameraManager cameraManager;
+
 	// Init
 
 	private void Awake() {
 		gameOver = false;
+		cameraManager = gameObject.GetComponent<CameraManager>();
 	}
 
 	// Update
 
 	private void Update() {
-		timeUntilShiftEnds -= Time.deltaTime;
+		if (!gameOver) {
+			timeUntilShiftEnds -= Time.deltaTime;
+		}
 
-		if (timeUntilShiftEnds <= 0) {
+		if (timeUntilShiftEnds < 0) {
+			cameraManager.hidePanel();
 			endGamePanel.SetActive(true);
 			gameOver = true;
+			timeUntilShiftEnds = 0;
 		}
 	}
 
 	// Functions
-
-	public void setTutorialOn(bool set) {
-		tutorialOn = set;
-	}
 
 	public void addMoney(int amount) {
 		money += amount;
