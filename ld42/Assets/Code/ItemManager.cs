@@ -47,6 +47,8 @@ public class ItemManager : MonoBehaviour {
 
 	public void deleteAllItemsInPosition(CounterPosition counterPosition) {
 
+		Debug.Log("counter Pos: " + counterPosition);
+
 		List<GameObject> items = makeListOfItems(counterPosition);
 
 		for (int i = items.Count - 1; i > -1; i--) {

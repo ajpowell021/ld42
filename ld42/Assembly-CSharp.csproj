@@ -54,8 +54,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CarController.cs" />
     <Compile Include="Assets\Code\CameraManager.cs" />
+    <Compile Include="Assets\Code\CarController.cs" />
     <Compile Include="Assets\Code\CounterContoller.cs" />
     <Compile Include="Assets\Code\CounterManager.cs" />
     <Compile Include="Assets\Code\CustomerController.cs" />
@@ -63,7 +63,10 @@
     <Compile Include="Assets\Code\CustomerSpawner.cs" />
     <Compile Include="Assets\Code\EndGamePanelController.cs" />
     <Compile Include="Assets\Code\Enums.cs" />
+    <Compile Include="Assets\Code\FootTrafficController.cs" />
+    <Compile Include="Assets\Code\FootTrafficManager.cs" />
     <Compile Include="Assets\Code\InputManager.cs" />
+    <Compile Include="Assets\Code\ItemInteractions.cs" />
     <Compile Include="Assets\Code\ItemManager.cs" />
     <Compile Include="Assets\Code\MainMenuButtonController.cs" />
     <Compile Include="Assets\Code\OrderPanelManager.cs" />
@@ -78,9 +81,7 @@
     <Compile Include="Assets\Code\TimerController.cs" />
     <Compile Include="Assets\Code\TrafficManager.cs" />
     <Compile Include="Assets\Code\TutorialManager.cs" />
-    <Compile Include="Assets\FootTrafficController.cs" />
-    <Compile Include="Assets\FootTrafficManager.cs" />
-    <Compile Include="Assets\TutorialState.cs" />
+    <Compile Include="Assets\Code\TutorialState.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Chany/Desktop/Workspace/ld42/ld42/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
